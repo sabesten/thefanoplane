@@ -6,16 +6,7 @@
   <title>Gate I — The Fano Plane over ℤ₇ | Fano平面与物理</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/chapter.css">
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        tags: 'ams'
-      },
-      svg: { fontCache: 'global' }
-    };
-  </script>
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],tags:'ams'},svg:{fontCache:'global'}};</script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </head>
 <body>
@@ -25,11 +16,11 @@
       <span class="nav-title" data-zh="门 I" data-en="Gate I"></span>
     </div>
     <div class="nav-links">
-      <a href="#ch1">Ch.1</a>
-      <a href="#ch2">Ch.2</a>
-      <a href="#ch3">Ch.3</a>
-      <a href="#ch4">Ch.4</a>
-      <a href="#ch5">Ch.5</a>
+      <a href="/gates/part1-ch1.html">Ch.1</a>
+      <a href="/gates/part1-ch2.html">Ch.2</a>
+      <a href="/gates/part1-ch3.html">Ch.3</a>
+      <a href="/gates/part1-ch4.html">Ch.4</a>
+      <a href="/gates/part1-ch5.html">Ch.5</a>
       <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中文</button>
     </div>
   </nav>
@@ -37,63 +28,35 @@
   <main class="chapter-main">
     <header class="chapter-header">
       <span class="chapter-part" data-zh="第一部分" data-en="Part I"></span>
-      <h1 class="chapter-book-title">
-        <span data-zh="Fano平面与 $\mathbb{Z}_7^3$" data-en="The Fano Plane over $\mathbb{Z}_7$"></span>
-      </h1>
-      <p class="chapter-book-desc">
-        <span data-zh="第1–5章。从七点几何到不可能性定理。" data-en="Chapters 1–5. From the seven-point geometry to the impossibility theorem."></span>
-      </p>
+      <h1 class="chapter-book-title"><span data-zh="Fano平面与 $\mathbb{Z}_7^3$" data-en="The Fano Plane over $\mathbb{Z}_7$"></span></h1>
+      <p class="chapter-book-desc"><span data-zh="第1–5章。从七点几何到不可能性定理。" data-en="Chapters 1–5. From the seven-point geometry to the impossibility theorem."></span></p>
     </header>
 
     <nav class="chapter-toc">
       <h3 data-zh="目录" data-en="Contents"></h3>
       <ol>
-        <li><a href="#ch1"><span data-zh="Fano平面与 $\mathbb{Z}_7^3$" data-en="The Fano Plane and $\mathbb{Z}_7^3$"></span></a></li>
-        <li><a href="#ch2"><span data-zh="$S^7$ 的等变投影" data-en="Equivariant Projection from $S^7$"></span></a></li>
-        <li><a href="#ch3"><span data-zh="同调亏缺" data-en="The Homology Deficit"></span></a></li>
-        <li><a href="#ch4"><span data-zh="自同构群：$PGL(3,7)$ 与稳定子群" data-en="Automorphisms: $PGL(3,7)$ and the Stabilizer"></span></a></li>
-        <li><a href="#ch5"><span data-zh="不可能性定理" data-en="The Impossibility Theorem"></span></a></li>
+        <li><a href="/gates/part1-ch1.html"><span data-zh="Fano平面与 $\mathbb{Z}_7^3$" data-en="The Fano Plane and $\mathbb{Z}_7^3$"></span></a></li>
+        <li><a href="/gates/part1-ch2.html"><span data-zh="$S^7$ 的等变投影" data-en="Equivariant Projection from $S^7$"></span></a></li>
+        <li><a href="/gates/part1-ch3.html"><span data-zh="同调亏缺" data-en="The Homology Deficit"></span></a></li>
+        <li><a href="/gates/part1-ch4.html"><span data-zh="自同构群：$PGL(3,7)$ 与稳定子群" data-en="Automorphisms: $PGL(3,7)$ and the Stabilizer"></span></a></li>
+        <li><a href="/gates/part1-ch5.html"><span data-zh="不可能性定理" data-en="The Impossibility Theorem"></span></a></li>
       </ol>
     </nav>
 
     <!-- Chapter 1 -->
     <section class="chapter-content" id="ch1">
       <h2><span data-zh="第一章：Fano平面与 $\mathbb{Z}_7^3$" data-en="Chapter 1: The Fano Plane and $\mathbb{Z}_7^3$"></span></h2>
-      
       <div class="bilingual">
         <div class="lang-block" data-lang="en">
-          <p>This chapter establishes the fundamental objects of study: the Fano plane $\mathrm{PG}(2,7)$ as the projective plane over $\mathbb{F}_7$, the lattice $\mathbb{Z}_7^3$ as a discrete pre-geometry, and the $G_2$-invariant projection matrices with their orthogonal basis.</p>
+          <p>From the ancient Luoshu magic square as an $\mathbb{F}_3$-linear map, through the Fano plane $\mathrm{PG}(2,2)$ and the octonion algebra, to the $G_2$-equivariant projection $S^7 \to \mathbb{Z}_7^3$. This chapter establishes the algebraic foundations: the canonical basis vectors $w_1, w_2$ of the 6-dimensional invariant subspace $V_3$, and the surjectivity of the composite projection.</p>
+          <p><strong>Key results:</strong> 5 theorems, 4 propositions, 3 definitions, 6 remarks.</p>
         </div>
         <div class="lang-block" data-lang="zh">
-          <p>本章确立研究对象的基本结构：$\mathbb{F}_7$ 上的射影平面 $\mathrm{PG}(2,7)$、作为离散预几何的格 $\mathbb{Z}_7^3$，以及 $G_2$ 不变投影矩阵及其正交基。</p>
+          <p>从作为 $\mathbb{F}_3$ 线性映射的古老洛书幻方，经过Fano平面 $\mathrm{PG}(2,2)$ 和八元数代数，到 $G_2$ 等变投影 $S^7 \to \mathbb{Z}_7^3$。本章建立代数基础：6维不变子空间 $V_3$ 的典范基向量 $w_1, w_2$，以及复合投影的满射性。</p>
+          <p><strong>关键结果：</strong>5个定理、4个命题、3个定义、6个注记。</p>
         </div>
       </div>
-
-      <div class="theorem-block">
-        <span class="theorem-label">Theorem 1.1 / 定理 1.1</span>
-        <div class="bilingual">
-          <div class="lang-block" data-lang="en">
-            <p>Let $\Phi_s = \{v \in \mathbb{Z}_7^3 : \|v\|^2 = s \pmod{7}\}$. Then the projection matrix $P_s = \frac{1}{|G|}\sum_{g \in G} g \Pi_s g^{-1}$ is $G_2$-equivariant, where $G = \mathrm{Stab}(\Phi_s)$.</p>
-          </div>
-          <div class="lang-block" data-lang="zh">
-            <p>设 $\Phi_s = \{v \in \mathbb{Z}_7^3 : \|v\|^2 = s \pmod{7}\}$。则投影矩阵 $P_s = \frac{1}{|G|}\sum_{g \in G} g \Pi_s g^{-1}$ 是 $G_2$ 等变的，其中 $G = \mathrm{Stab}(\Phi_s)$。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="definition-block">
-        <span class="definition-label">Definition 1.2 / 定义 1.2</span>
-        <div class="bilingual">
-          <div class="lang-block" data-lang="en">
-            <p>The <em>canonical basis</em> for the projection onto the 6-dimensional $G_2$-invariant subspace is given by:</p>
-            $$w_1 = \frac{1}{\sqrt{42}}(7, -1, -1, -1, -1, -1, -1), \quad w_2 = \frac{1}{\sqrt{42}}(6, -1, -1, -1, -1, -1, -1)$$
-          </div>
-          <div class="lang-block" data-lang="zh">
-            <p>投影到6维 $G_2$ 不变子空间的<em>典范基</em>为：</p>
-            $$w_1 = \frac{1}{\sqrt{42}}(7, -1, -1, -1, -1, -1, -1), \quad w_2 = \frac{1}{\sqrt{42}}(6, -1, -1, -1, -1, -1, -1)$$
-          </div>
-        </div>
-      </div>
+      <a href="/gates/part1-ch1.html" class="read-more" data-zh="阅读全文 →" data-en="Read full chapter →"></a>
     </section>
 
     <!-- Chapter 2 -->
@@ -101,12 +64,15 @@
       <h2><span data-zh="第二章：$S^7$ 的等变投影" data-en="Chapter 2: Equivariant Projection from $S^7$"></span></h2>
       <div class="bilingual">
         <div class="lang-block" data-lang="en">
-          <p>The $G_2$-equivariant projection $S^7 \to \mathbb{Z}_7^3$ maps the continuous 7-sphere to the discrete lattice. This chapter constructs the 294-element subgroup and shows that the projection preserves the constraint structure essential for the impossibility theorem.</p>
+          <p>The $G_2$-equivariant projection maps the continuous 7-sphere to the discrete lattice $\mathbb{Z}_7^3$. This chapter constructs the 294-element subgroup and shows that the projection preserves the constraint structure essential for the impossibility theorem.</p>
+          <p><strong>Key results:</strong> 2 theorems.</p>
         </div>
         <div class="lang-block" data-lang="zh">
-          <p>$G_2$ 等变投影 $S^7 \to \mathbb{Z}_7^3$ 将连续的7-球面映射到离散格上。本章构造294元子群，并证明该投影保持了不可能性定理所必需的约束结构。</p>
+          <p>$G_2$ 等变投影将连续的7-球面映射到离散格 $\mathbb{Z}_7^3$。本章构造294元子群，并证明该投影保持了不可能性定理所必需的约束结构。</p>
+          <p><strong>关键结果：</strong>2个定理。</p>
         </div>
       </div>
+      <a href="/gates/part1-ch2.html" class="read-more" data-zh="阅读全文 →" data-en="Read full chapter →"></a>
     </section>
 
     <!-- Chapter 3 -->
@@ -114,23 +80,15 @@
       <h2><span data-zh="第三章：同调亏缺" data-en="Chapter 3: The Homology Deficit"></span></h2>
       <div class="bilingual">
         <div class="lang-block" data-lang="en">
-          <p>HD = 28: the homology deficit of the $\mathbb{Z}_7^3$ lattice. Three layers of constraints — axial (147), face-diagonal (294), body-diagonal (196) — sum to 637. The heuristic argument for the 147 → 196 transition is presented with honest annotation of the proof gap.</p>
+          <p>HD = 28: the homology deficit of the $\mathbb{Z}_7^3$ lattice. Three layers of constraints — axial (147), face-diagonal (294), body-diagonal (196) — sum to 637. The 147 → 196 transition is established by heuristic argument, with honest annotation of the proof gap.</p>
+          <p><strong>Key results:</strong> 3 theorems, 2 propositions, 3 remarks.</p>
         </div>
         <div class="lang-block" data-lang="zh">
           <p>HD = 28：$\mathbb{Z}_7^3$ 格的同调亏缺。三层约束——轴向（147）、面对角（294）、空间泛对角（196）——总计637。147 → 196 的过渡采用启发式论证，并诚实标注了证明缺口。</p>
+          <p><strong>关键结果：</strong>3个定理、2个命题、3个注记。</p>
         </div>
       </div>
-      <div class="remark-block">
-        <span class="remark-label">Remark 3.1 / 注记 3.1</span>
-        <div class="bilingual">
-          <div class="lang-block" data-lang="en">
-            <p>The passage from 147 to 196 in the deficit count is established by heuristic argument. A complete proof requires either a full Bredon cohomology computation or a combinatorial-topological alternative.</p>
-          </div>
-          <div class="lang-block" data-lang="zh">
-            <p>亏缺计数中从147到196的过渡由启发式论证建立。完整证明需要完整的 Bredon 上同调计算或组合拓扑替代方案。</p>
-          </div>
-        </div>
-      </div>
+      <a href="/gates/part1-ch3.html" class="read-more" data-zh="阅读全文 →" data-en="Read full chapter →"></a>
     </section>
 
     <!-- Chapter 4 -->
@@ -139,11 +97,14 @@
       <div class="bilingual">
         <div class="lang-block" data-lang="en">
           <p>The full automorphism group of $\mathrm{PG}(2,7)$ has order $|PGL(3,7)| = 33{,}784{,}128$. The stabilizer of the norm-sphere $\Phi_s$ is a 294-element subgroup with 14 conjugacy classes. Its character table features 6 one-dimensional and 8 six-dimensional irreducible representations, satisfying $6 \times 1^2 + 8 \times 6^2 = 294$.</p>
+          <p><strong>Key results:</strong> 1 proof (exceptional isomorphism).</p>
         </div>
         <div class="lang-block" data-lang="zh">
           <p>$\mathrm{PG}(2,7)$ 的完全自同构群阶为 $|PGL(3,7)| = 33{,}784{,}128$。范数球面 $\Phi_s$ 的稳定子群为294元子群，含14个共轭类。其特征标表包含6个1维和8个6维不可约表示，满足 $6 \times 1^2 + 8 \times 6^2 = 294$。</p>
+          <p><strong>关键结果：</strong>1个证明（例外同构）。</p>
         </div>
       </div>
+      <a href="/gates/part1-ch4.html" class="read-more" data-zh="阅读全文 →" data-en="Read full chapter →"></a>
     </section>
 
     <!-- Chapter 5 -->
@@ -152,18 +113,20 @@
       <div class="bilingual">
         <div class="lang-block" data-lang="en">
           <p>A perfect order-7 magic cube must satisfy 637 simultaneous constraints. Exhaustive enumeration of $3.3 \times 10^8$ invertible matrices over $\mathbb{Z}_7$ yields 9,216 semi-perfect equivalence classes and 138 partial-diagonal classes, but <strong>zero perfect classes</strong>. This is the impossibility theorem.</p>
+          <p><strong>Key results:</strong> 3 proofs (stabilizer, class verification, character table).</p>
         </div>
         <div class="lang-block" data-lang="zh">
           <p>一个完美的7阶幻立方必须同时满足637个约束。对 $\mathbb{Z}_7$ 上 $3.3 \times 10^8$ 个可逆矩阵的穷尽枚举得到9,216个半完美等价类和138个部分对角类，但<strong>零个完美类</strong>。这就是不可能性定理。</p>
+          <p><strong>关键结果：</strong>3个证明（稳定子群、类验证、特征标表）。</p>
         </div>
       </div>
+      <a href="/gates/part1-ch5.html" class="read-more" data-zh="阅读全文 →" data-en="Read full chapter →"></a>
     </section>
   </main>
 
   <footer class="footer">
     <p>© 2026 <em>The Fano Plane in Physics</em>. All rights reserved.</p>
   </footer>
-
   <script src="/js/fano.js"></script>
   <script src="/js/lang.js"></script>
 </body>

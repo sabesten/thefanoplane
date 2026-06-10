@@ -219,3 +219,95 @@ body .lang-block[data-lang="zh"] { display: block; }
   .chapter-content h2 { font-size: 20px; }
   .lang-block { padding: 10px 12px; }
 }
+
+/* Read more link */
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.read-more:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Chapter navigation (prev/next) */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+}
+.chapter-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+.chapter-nav a:hover { opacity: 0.8; }
+.ch-next { margin-left: auto; }
+
+/* Proof block (collapsible) */
+.proof-block {
+  margin: 16px 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.proof-block summary {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-dim);
+  user-select: none;
+  list-style: none;
+}
+.proof-block summary::-webkit-details-marker { display: none; }
+.proof-block summary::before {
+  content: "▸ ";
+  transition: transform 0.2s;
+}
+.proof-block[open] summary::before {
+  content: "▾ ";
+}
+.proof-content {
+  padding: 0 20px 16px;
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.proof-content p { margin: 0; }
+
+/* Results table */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+}
+.results-table th, .results-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.results-table th {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.results-table tr:hover td {
+  background: rgba(124, 111, 247, 0.05);
+}
+
+/* Nav active link */
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}

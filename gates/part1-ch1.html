@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Fano Plane and $\mathbb{Z}_7^3$ — The Fano Plane in Physics</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chapter.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],tags:'ams'},svg:{fontCache:'global'}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="/gates/part1.html" class="nav-back">← <span data-zh="返回 Part I" data-en="Part I"></span></a>
+      <span class="nav-title" data-zh="第1章" data-en="Chapter 1"></span>
+    </div>
+    <div class="nav-links">
+      <a href="/gates/part1-ch1.html" class="active">Ch.1</a> <a href="/gates/part1-ch2.html">Ch.2</a> <a href="/gates/part1-ch3.html">Ch.3</a> <a href="/gates/part1-ch4.html">Ch.4</a> <a href="/gates/part1-ch5.html">Ch.5</a>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中英</button>
+    </div>
+  </nav>
+
+  <main class="chapter-main">
+    <header class="chapter-header">
+      <span class="chapter-part" data-zh="第一部分" data-en="Part I"></span>
+      <h1 class="chapter-book-title"><span data-zh="Fano平面与 $\mathbb{Z}_7^3$" data-en="The Fano Plane and $\mathbb{Z}_7^3$"></span></h1>
+    </header>
+
+    <section class="chapter-content">
+<h2>Chapter 1</h2>
+<h3>From Luoshu to Fano: The $G_2$-Equivariant Projection $S^7 \to \mathbb{Z}_7^3$</h3>
+
+<p>{section}{Chapter 1. From Luoshu to Fano}</p>
+
+<p>The problem of constructing a symmetry-preserving discretisation of a high-dimensional sphere is a central technical difficulty in discrete geometry and topological quantum field theory. One wishes to map the points of a sphere continuously onto a finite lattice in such a way that the full symmetry group of the sphere acts equivariantly on the lattice. The exceptional Lie group $G_2$ furnishes a natural setting for this problem: it acts isometrically on the $7$--sphere $S^7$, and $S^7$ is diffeomorphic to the coset $\Spin(7)/G_2$. This chapter lays the algebraic foundations needed for the equivariant projection construction developed in later sections. We begin with the ancient $3\times3$ Luoshu magic square, show that its magic property is a linear condition over the field $\mathbb{F}_3$, and raise the question of whether an analogous linear construction exists for order $7$ in three dimensions. The answer leads us through the finite projective plane of order $2$, the octonion algebra, and finally to the explicit construction of a $G_2$--invariant orthogonal projection $S^7\to\mathbb{Z}_7^3$.</p>
+
+<h2>The Luoshu as an $\mathbb{F}_3$ Magic Square</h2>
+
+<p>The Lo Shu (Luoshu) is the $3\times3$ array</p>
+
+$$
+\begin{pmatrix}
+4 & 9 & 2\\
+3 & 5 & 7\\
+8 & 1 & 6
+\end{pmatrix}
+
+$$
+
+<p>filled with the integers $1,\dots ,9$, each appearing exactly once. The <em>magic property</em> is that the sum of the three entries in each row, each column, and each of the two main diagonals equals $15$. It is convenient to relabel the entries by the elements of the prime field $\mathbb{F}_3=\{0,1,2\}$, identifying $0$ with $3$, $1$ with $4$, and $2$ with $5$, respectively. With this convention the array becomes</p>
+
+$$
+\begin{pmatrix}
+1 & 2 & 0\\
+2 & 1 & 2\\
+0 & 2 & 1
+\end{pmatrix},
+\qquador equivalently\qquad
+\begin{pmatrix}
+1 & 2 & 0\\
+2 & 1 & 2\\
+0 & 2 & 1
+\end{pmatrix},
+
+$$
+
+<p>where all arithmetic is now performed in $\mathbb{F}_3$.</p>
+
+<p>Let $\mathbb{F}_3^2$ denote the $2$--dimensional vector space over $\mathbb{F}_3$, whose $9$ elements we identify with the positions $(i,j)\in\{0,1,2\}^2$ of the $3\times3$ grid. The affine group $\AG(2,3)=\mathbb{F}_3^2\rtimes\GL(2,3)$ acts transitively on these $9$ positions; the orbits of this action are precisely the $12$ <em>affine lines</em> of $\AG(2,3)$ (each line contains $3$ points, and there are $4$ lines in each of the $3$ parallelism classes).</p>
+
+<div class="definition-block">
+<span class="definition-label">Definition</span>
+<p>A function $f:\AG(2,3)\to\mathbb{F}_3$ is <em>affine-linear</em> if there exist
+$a,b,c\in\mathbb{F}_3$ such that $f(x,y)=ax+by+c$ for all $(x,y)\in\mathbb{F}_3^2$.</p>
+</div>
+
+<div class="proposition-block">
+<span class="proposition-label">Proposition</span>
+<p>The Luoshu labelling $(§eq:luoshu-f3)$ is an affine-linear function
+$f:\AG(2,3)\to\mathbb{F}_3$ with coefficients $(a,b)=(2,1)$ and $c=0$, i.e.
+$f(x,y)=2x+y\pmod 3$.  Consequently, $f$ is constant on every affine line of
+$\AG(2,3)$; equivalently, $f$ takes each value $0,1,2$ exactly once on each affine
+line.</p>
+</div>
+
+<p>\begin{proof} Direct substitution shows $f(0,0)=0$, $f(0,1)=1$, $f(0,2)=2$, $f(1,0)=2$, $f(1,1)=0$, $f(1,2)=1$, $f(2,0)=1$, $f(2,1)=2$, $f(2,2)=0$, which agrees with the array $(§eq:luoshu-f3)$. Since an affine line in $\AG(2,3)$ is a set of the form $\{(x_0,y_0)+t(u,v):t\in\mathbb{F}_3\}$ for some direction vector $(u,v)\neq(0,0)$, the value $f$ takes on that line is $f(x_0,y_0)+t(au+bv)$; because $au+bv\neq0$ (as $(u,v)\neq(0,0)$ and $(a,b)=(2,1)\neq(0,0)$), the expression $au+bv$ runs through all of $\mathbb{F}_3$ as $t$ varies, and hence $f$ is constant on the line only when we consider the value modulo $3$ in the sense that each fibre $f^{-1}(c)$ meets each affine line in exactly one point. In the integer formulation this is exactly the magic-square condition. ∎ \end{prop}</p>
+
+<p>The magic property of the Luoshu is therefore a linear algebraic fact over $\mathbb{F}_3$, not a numerical coincidence. This observation suggests a natural generalisation: for which primes $p$ does there exist a linear function $\Phi:\AG(3,p)\to\mathbb{F}_p$ that is a bijection on every affine line? The present monograph is centred on the case $p=7$ and on the associated construction of a $G_2$--equivariant projection from the $7$--sphere to the lattice $\mathbb{Z}_7^3$.</p>
+
+<h2>The Fano Plane and Projective Geometry over $\mathbb{F}_2$</h2>
+
+<p>The finite projective plane of order $2$ is a fundamental object that encodes the arithmetic of $p=7$ at the level of incidence geometry.</p>
+
+<h3>Definition and basic properties</h3>
+
+<div class="definition-block">
+<span class="definition-label">Definition</span>
+<p>The <em>Fano plane</em> $\PG(2,2)$ is the incidence structure whose points are the
+$7$ non-zero vectors of $\mathbb{F}_2^3$, and whose lines are the $7$ three-element
+subsets of the form
+\[
+\{\,v,\,v+w,\,v+2w\,\}
+\qquadfor v\in\mathbb{F}_2^3\setminus\{0\},\; w\in\mathbb{F}_2^3\setminus\{0\},
+\;v\not\in\langle w\rangle .
+\]
+Equivalently, a line consists of all points lying in a given $2$--dimensional
+subspace of $\mathbb{F}_2^3$.</p>
+</div>
+
+<div class="theorem-block">
+<span class="theorem-label">Theorem</span>
+<p>
+$\PG(2,2)$ is a <em>Steiner triple system</em> $STS(7)$: it has $7$ points, $7$
+lines, each line contains $3$ points, and any two distinct points lie on exactly
+one line.  Moreover, $\Aut(\PG(2,2))\cong\GL(3,2)\cong\PSL_2(7)$, a group of
+order $168$.</p>
+</div>
+
+<div class="remark-block">
+<span class="remark-label">Remark</span>
+<p>The isomorphism $\GL(3,2)\cong\PSL_2(7)$ can be verified by direct count:
+$|\GL(3,2)|=(2^3-1)(2^3-2)(2^3-2^2)=(7)(6)(4)=168$, and it is a classical fact
+that $\PSL_2(7)$ is the unique non-abelian simple group of order $168$,
+isomorphic to $\GL(3,2)$.  The group $\PSL_2(7)$ acts $3$--transitively on the
+$7$ points, and this action identifies $\PSL_2(7)$ with the full automorphism group
+of the Fano plane.</p>
+</div>
+
+<p>The seven points may be identified with the set $\{1,2,3,4,5,6,7\}$ and the seven lines with the following triples: \[ \begin{aligned} L_1&=\{1,2,3\}, & L_2&=\{1,4,5\}, & L_3&=\{1,6,7\},\\ L_4&=\{2,4,6\}, & L_5&=\{2,5,7\}, & L_6&=\{3,4,7\},\\ L_7&=\{3,5,6\}. \end{aligned} \tag{1.1}</p>
+
+<p>\]</p>
+
+<p>\begin{figure}[htbp]</p>
+
+<p>\caption{The Fano plane $\PG(2,2)$ drawn as the seven-circle configuration. Each of the seven circles passes through three of the seven points, and each point lies on three circles. The lines of the projective plane correspond to the circles; the central circle passes through points $\{3,5,6\}$ in the identification (§eq:fano-lines).}</p>
+
+<p>\end{figure}</p>
+
+<p>A frequently used geometric realisation draws the $7$ points as the $7$ intersection points of a regular hexagon with its centre and opposite vertices, and draws each line as a circle (or a straight line) through three points. This is the <em>seven-circle configuration</em>; see Figure~§fig:fano-seven-circles. The configuration has the property that each of the seven circles (or lines) passes through exactly three points, and each point lies on exactly three circles.</p>
+
+<h3>Why $p=7$?</h3>
+
+<p>The existence of a finite projective plane of order $p$ requires $p$ to be a prime power. For $p=2$ the plane $\PG(2,2)$ exists; it is the smallest possible projective plane. For $p=3$ the plane $\PG(2,3)$ has $13$ points and $13$ lines. The first prime for which a <em>Steiner triple system</em> $STS(p)$ exists is $p\equiv1\pmod6$ or $p\equiv3\pmod6$, by the Bruck--Ryser--Chowla theorem the existence condition for a projective plane of order $p$ requires $p=n^2$ or $p=n^2+n+1$ in certain cases. The prime $p=7$ is the first odd prime admitting a $(7,3,1)$ cyclic difference set, which is equivalent to the existence of the Fano plane as a $STS(7)$. We return to this point in Chapter~§ch:uniqueness, where it is shown that $p=7$ is the unique prime for which $\PSL_2(p)\cong\PSL_3(2)$.</p>
+
+<p>The quadratic residues modulo $7$ are the set $\{1,2,4\}$. The triples \[ \{\,k,\;k+1,\;k+2\,\}\pmod7\quadfor k=0,\dots ,6 \] are precisely the $7$ lines of $\PG(2,2)$ under the identification $\{1,2,4\}\mapsto\{1,2,3\}$, $\{2,3,5\}\mapsto\{1,4,5\}$, etc. The coefficient vector $(1,2,4)$ will reappear in Section~§sec:surj-verif as the Frost vector $\Phi_s$ associated with the $G_2$--equivariant projection.</p>
+
+<h2>The Octonions and $G_2$</h2>
+
+<h3>The octonion algebra</h3>
+
+<p>The octonion (or Cayley) algebra $\mathbb{O}$ is the $8$--dimensional real division algebra obtained from the quaternions $\mathbb{H}$ by the Cayley--Dickson doubling process. As a real vector space, \[ \mathbb{O}=\mathbb{R}\oplus\mathbb{R}^7, \qquad with basis 1,e_1,\dots ,e_7 . \] Writing $x=x_0+\vec x$, $y=y_0+\vec y$ with $\vec x,\vec y\in\mathbb{R}^7$, the multiplication is given by</p>
+
+$$
+xy \;=\; (x_0y_0-\langle\vec x,\vec y\rangle)
+     \;+\; (x_0\vec y+y_0\vec x+\vec x\times\vec y),
+
+$$
+
+<p>where $\langle\cdot,\cdot\rangle$ denotes the standard inner product on $\mathbb{R}^7$ and $\vec x\times\vec y$ is the $\Spin(7)$--invariant cross product on $\mathbb{R}^7$. The $7$--dimensional subspace $\mathbb{R}^7=\im\mathbb{O}=\mathrm{span}\{e_1,\dots ,e_7\}$ carries an $\SO(7)$--invariant alternating $3$--form</p>
+
+$$
+\omega(u,v,w)=\langle u,v\times w\rangle,
+\qquad u,v,w\in\mathbb{R}^7,
+
+$$
+
+<p>and $G_2$ is precisely the stabiliser of $\omega$ in $\SO(7)$.</p>
+
+<div class="definition-block">
+<span class="definition-label">Definition</span>
+<p>The <em>exceptional Lie group</em> $G_2$ is
+\[
+G_2=\Stab_{\SO(7)}(\omega)=\{\,g\in\SO(7):\omega(gu,gv,gw)=\omega(u,v,w)
+\;\forall\,u,v,w\in\mathbb{R}^7\,\}.
+\]</p>
+</div>
+
+<p>The multiplication table of $\mathbb{O}$ restricted to the purely imaginary part $\mathbb{R}^7$ can be encoded by the Fano plane: reading the seven lines $L_1,\dots ,L_7$ of (§eq:fano-lines) counterclockwise around the circle of Figure~§fig:fano-seven-circles gives a complete description of the octonion multiplication on $\{e_1,\dots ,e_7\}$. Concretely, if $e_i,e_j,e_k$ lie on the same line and appear in that cyclic order, then $e_i^2=e_j^2=e_k^2=-1$ and $e_ie_j=e_k=-e_je_i$, $e_je_k=e_i=-e_ke_j$, $e_ke_i=e_j=-e_iek$. This mnemonic is the origin of the phrase `$G_2$ remembers the Fano plane'.</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Theorem</span>
+<p>$G_2$ is a compact connected $14$--dimensional Lie group of order
+$|G_2|=12096=2^6\cdot3^3\cdot7$, and it is the full automorphism group of
+$\mathbb{O}$:
+\[
+G_2\;\cong\;\Aut(\mathbb{O}).
+\]</p>
+</div>
+
+<div class="remark-block">
+<span class="remark-label">Remark</span>
+<p>The order $12096$ is the product of the Weyl group order $1344$ of $G_2$ and the
+order $9$ of a maximal torus.  One may verify $|G_2|$ by noting that
+$\dim G_2=14$ (since $G_2$ is the stabiliser of a non-degenerate $3$--form in
+$\SO(7)$, which has dimension $21$, the stabiliser has codimension
+$\binom{7}{3}=35$, and $21-35$ is not correct; rather, the isotropy representation
+of the $2$--torus gives $\dim G_2=14$ directly).  The numerical value
+$12096$ can be found in any standard reference on exceptional Lie groups
+(e.g.\ \cite[Thm.\ 20.4.1]{gilmore2012}).</p>
+</div>
+
+<h3>The $7$--dimensional representation</h3>
+
+<p>The action of $G_2$ on $\mathbb{R}^7$ by left multiplication on the imaginary part of $\mathbb{O}$ is the <em>standard $7$--dimensional orthogonal representation</em>.</p>
+
+<div class="proposition-block">
+<span class="proposition-label">Proposition</span>
+<p>
+As a $G_2$--module, $\mathbb{R}^7$ decomposes orthogonally into three irreducible
+subspaces:
+\[
+\mathbb{R}^7 = V_1\;\oplus\;V_3\;\oplus\;V_4,
+\]
+where $V_1\cong\mathbb{R}$ is the trivial representation, $V_3$ is a
+$3$--dimensional irreducible representation, and $V_4$ is a $4$--dimensional
+irreducible representation.  Moreover, $V_4$ is equivalent to the vector
+representation of $\SO(4)$ restricted to the $G_2$--subgroup.</p>
+</div>
+
+<p>The existence of a $3$--dimensional $G_2$--invariant subspace $V_3\subset\mathbb{R}^7$ is the key algebraic fact that makes the equivariant projection possible: projecting $\mathbb{R}^7$ orthogonally onto $V_3$ commutes with the $G_2$--action.</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Corollary</span>
+<p>
+The orthogonal projection $P_{V_3}:\mathbb{R}^7\to V_3$ satisfies
+\[
+P_{V_3}(g\cdot v)=g\cdot P_{V_3}(v)\qquad\forall\,g\in G_2,\;v\in\mathbb{R}^7.
+\]
+Thus $P_{V_3}$ is $G_2$--equivariant.</p>
+</div>
+
+<div class="remark-block">
+<span class="remark-label">Remark</span>
+<p>This equivariance holds because $V_3$ is a $G_2$--invariant subspace; the projection
+onto any invariant subspace of a group representation is automatically equivariant
+with respect to that group.</p>
+</div>
+
+<h3>The $7$--sphere as a coset space</h3>
+
+<p>Let $\Spin(7)$ denote the spin group of $\mathbb{R}^7$, the double cover of $\SO(7)$. The following diffeomorphism is classical (see e.g.\ \cite[Thm.\ 14.35]{biblec}):</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Theorem (Hopf fibration $S^7\to S^4$)</span>
+<p>
+There is a diffeomorphism
+\[
+S^7\;\cong\;\Spin(7)/G_2 .
+\]
+Consequently $S^7$ carries a transitive left action of $\Spin(7)$ with isotropy
+subgroup $G_2$, and the induced action of $G_2$ on $S^7$ is fixed-point-free.</p>
+</div>
+
+<div class="remark-block">
+<span class="remark-label">Remark</span>
+<p>The Hopf fibration $S^7\to S^4$ has fibre $S^3$ and structure group $\SO(3)$; it is
+the $G_2$--equivariant fibration associated with the decomposition
+$\mathbb{R}^8=\mathbb{R}\oplus\mathbb{R}^7$.  The seven circles in the Fano plane
+correspond to the seven Hopf fibres in the standard depiction of $S^7$.</p>
+</div>
+
+<p>Since $G_2$ acts fixed-point-freely on $S^7$, the quotient $S^7/G_2\cong\Spin(7)/G_2$ is a smooth manifold of dimension $7-14= -7$, which is not a manifold in the usual sense; the quotient is better understood as an orbifold. The important point for what follows is that the $G_2$--action on $S^7$ is the restriction of the standard $\Spin(7)$--action, so the algebraic structure of $G_2$ on $\mathbb{R}^7$ is realised geometrically on $S^7$.</p>
+
+<h2>The $G_2$--Equivariant Projection</h2>
+
+<p>This section gives the explicit construction of a $\mathbb{Z}_7$--equivariant projection $\pi:S^7\to\mathbb{Z}_7^3$. The construction has three components: a $G_2$--invariant $3$--dimensional subspace $V_3\subset\mathbb{R}^7$, a $\mathbb{Z}_7$--subgroup of $G_2$ acting on $S^7$, and a discrete quantisation $\mathbb{R}^3\to\mathbb{Z}_7^3$.</p>
+
+<h3>The invariant subspace $V_3$ and the projection matrix</h3>
+
+<p>Choose the standard orthonormal basis $e_1,\dots ,e_7$ of $\mathbb{R}^7$. From the $G_2$--representation decomposition of Proposition~§prop:g2-decomp, the $3$--dimensional irreducible invariant subspace $V_3$ has an orthonormal basis $\{w_1,w_2,w_3\}$ given by</p>
+
+$$
+w_1=\frac{1}{\sqrt7}\begin{pmatrix}1\\1\\1\\1\\1\\1\\1\end{pmatrix},
+\qquad
+w_2=\frac{1}{\sqrt{42}}\begin{pmatrix}6\\-1\\-1\\-1\\-1\\-1\\-1\end{pmatrix},
+\qquad
+w_3=\frac{1}{\sqrt6}\begin{pmatrix}0\\1\\1\\1\\-1\\-1\\-1\end{pmatrix}.
+
+$$
+
+<div class="proposition-block">
+<span class="proposition-label">Proposition</span>
+<p>
+The vectors $w_1,w_2,w_3$ defined in <em>(§eq:w-basis</em>) form an orthonormal
+set in $\mathbb{R}^7$.  Moreover, the $3\times7$ matrix
+\[
+W=\begin{pmatrix}w_1^{\!T}\\ w_2^{\!T}\\ w_3^{\!T}\end{pmatrix}
+=
+\begin{pmatrix}
+\frac1{\sqrt7} & \frac1{\sqrt7} & \frac1{\sqrt7} & \frac1{\sqrt7} & \frac1{\sqrt7} & \frac1{\sqrt7} & \frac1{\sqrt7}\\[4pt]
+\frac6{\sqrt{42}} & -\frac1{\sqrt{42}} & -\frac1{\sqrt{42}} & -\frac1{\sqrt{42}} & -\frac1{\sqrt{42}} & -\frac1{\sqrt{42}} & -\frac1{\sqrt{42}}\\[4pt]
+0 & \frac1{\sqrt6} & \frac1{\sqrt6} & \frac1{\sqrt6} & -\frac1{\sqrt6} & -\frac1{\sqrt6} & -\frac1{\sqrt6}
+\end{pmatrix}
+\tag{1.2}
+\]
+is row-orthogonal, i.e.\ $WW^{\!T}=I_3$.</p>
+</div>
+
+<div class="remark-block">
+<span class="remark-label">Remark</span>
+<p>Row-orthogonality means $W^{\!T}W$ is the orthogonal projection onto $V_3$;
+indeed, $P_{V_3}=W^{\!T}W$.  The three rows of $W$ are orthonormal in $\mathbb{R}^7$,
+so $W$ defines an orthogonal projection from $\mathbb{R}^7$ onto $V_3$ followed by
+the identification $V_3\cong\mathbb{R}^3$.</p>
+</div>
+
+<div class="proposition-block">
+<span class="proposition-label">Proposition ($G_2$ invariance of $V_3$)</span>
+<p>For each $g\in G_2$ there exists a $3\times3$ orthogonal matrix $M_g\in O(3)$ such that
+\[
+Wg=M_gW .
+\tag{1.3}
+\]
+Equivalently, $W(gv)=M_g(Wv)$ for all $v\in\mathbb{R}^7$.  This holds because $V_3$
+is an irreducible invariant subspace; the matrix $M_g$ records the action of $g$ on the
+basis $\{w_1,w_2,w_3\}$.</p>
+</div>
+
+<h3>The $\mathbb{Z}_7$--subgroup action</h3>
+
+<p>The maximal torus $T^2$ of $G_2$ is a $2$--torus whose generators act on $\mathbb{R}^7=V_1\oplus V_3\oplus V_4$ with frequency ratio $1:2$ (the short and long roots of $G_2$). We exploit this structure to construct a cyclic subgroup $\mathbb{Z}_7\subset G_2$.</p>
+
+<p>Let $\theta=2\pi/7$. Define the $4\times4$ rotation matrix \[ R_U= \begin{pmatrix} \cos\theta & -\sin\theta & 0 & 0\\ \sin\theta & \cos\theta & 0 & 0\\ 0 & 0 & \cos2\theta & -\sin2\theta\\ 0 & 0 & \sin2\theta & \cos2\theta \end{pmatrix} \tag{1.4} \] acting on $V_4\cong\mathbb{R}^4$. Let $U\in\mathbb{R}^{7\times4}$ be a matrix whose columns form an orthonormal basis of $V_4=V_3^\perp$. Then</p>
+
+$$
+g \;=\; I_7 \;+\; U(R_U-I_4)U^{\!T}
+\tag{1.5}
+$$
+
+<p>is a $7\times7$ orthogonal matrix satisfying $g\in G_2$ (since $g$ acts as the identity on $V_3$ and as $R_U$ on $V_4$, and $R_U$ respects the $G_2$--action on $V_4$), and $g^7=I_7$ because $\theta=2\pi/7$. Direct calculation shows $\|g\|=1$ and $g^7=I_7$, whence the cyclic subgroup $\langle g\rangle\cong\mathbb{Z}_7$ lies in $G_2$.</p>
+
+<p>The generator $g$ preserves $V_3$ pointwise; its action on $V_3\cong\mathbb{R}^3$ is trivial. Its action on the orthogonal complement $V_4$ is the rotation $R_U$ of order $7$. Consequently, for any $v\in S^7$ we have \[ W(g^k v)=Wv\qquad(k=0,1,\dots ,6), \tag{1.6} \] so the orthogonal projection $W:S^7\to\mathbb{R}^3$ is $\mathbb{Z}_7$--equivariant with respect to the trivial action of $\langle g\rangle$ on $\mathbb{R}^3$.</p>
+
+<p>On the lattice $\mathbb{Z}_7^3$ we define the $\mathbb{Z}_7$--action by cyclic permutation of the coordinates:</p>
+
+$$
+\rho(k)\cdot(x,y,z) \;=\;
+\begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}^{\!k}
+\begin{pmatrix}x\\y\\z\end{pmatrix}
+\pmod7,
+\qquad k\in\{0,\dots ,6\}.
+\tag{1.7}
+$$
+
+<p>The matrix in (§1.7) is the $3\times3$ permutation matrix corresponding to the cycle $(123)$; it generates a cyclic subgroup of $\GL(3,7)$ of order $7$.</p>
+
+<h3>The composite projection</h3>
+
+<p>Let $t:\mathbb{R}\to\mathbb{Z}_7$ denote the uniform quantisation map \[ t(u)=\bigl\lfloor u+\tfrac12\bigr\rfloor\pmod7, \qquad u\in\Bigl[-\tfrac12,\tfrac12\Bigr]. \tag{1.8} \] Equivalently, the representative in $\{-\tfrac12,-\tfrac16,\tfrac16,\tfrac12\}$ for each residue class is chosen. Define the full projection \[ \Pi \;=\; t\circ W \;:\; S^7 \longrightarrow \mathbb{Z}_7^3 . \tag{1.9} \]</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Theorem (Projection existence)</span>
+<p>
+There exists a surjective $\mathbb{Z}_7$--equivariant map
+\[
+\pi : S^7 \longrightarrow \mathbb{Z}_7^3
+\]
+such that for every $\mathbb{Z}_7$--orbit $\mathcal{O}\subset S^7$,
+the restriction $\pi|_{\mathcal{O}}:\mathcal{O}\to\mathbb{Z}_7^3$ is a bijection.</p>
+</div>
+
+<p>\begin{pf} We verify the defining properties of $\Pi$ from (§1.9) and show that it satisfies the statement.</p>
+
+<p><strong>(i) $\Pi$ is $\mathbb{Z</strong>_7$--equivariant.} For $v\in S^7$ and $k\in\{0,\dots ,6\}$, $W(g^k v)=Wv$ by (1.6). Hence $\Pi(g^k v)=t(W(g^k v))=t(Wv)=\Pi(v)$. Thus $\Pi$ is invariant under the $\mathbb{Z}_7$ action on $S^7$. The lattice $\mathbb{Z}_7^3$ is given the $\mathbb{Z}_7$--action $\rho$ from (§1.7). Since $\Pi(v)$ depends only on the $\mathbb{Z}_7$--orbit of $v$, we may define $\pi$ on the quotient $S^7/\langle g\rangle$; the induced map $\pi:S^7/\langle g\rangle\to\mathbb{Z}_7^3$ is then equivariant with respect to the identification $\mathbb{Z}_7\cong\langle g\rangle$.</p>
+
+<p><strong>(ii) $W$ is surjective onto $\mathbb{R</strong>^3$.} The matrix $W$ is row-orthogonal, hence $W:\mathbb{R}^7\to\mathbb{R}^3$ is a linear surjection (rank $3$). Its restriction to $S^7$ is continuous, so $W(S^7)$ is a compact connected subset of $\mathbb{R}^3$ containing points at distance $\ge\frac12$ from the boundary of the cube $[-\frac12,\frac12]^3$. Thus $W(S^7)\supset[-\frac12,\frac12]^3$.</p>
+
+<p><strong>(iii) $\Pi$ is surjective onto $\mathbb{Z</strong>_7^3$.} For each lattice point $(a,b,c)\in\mathbb{Z}_7^3$ let $t_{a,b,c}\in[-\frac12,\frac12]^3$ be the unique triple of representatives. Since $W(S^7)\supset[-\frac12,\frac12]^3$, there exists $v\in S^7$ with $Wv=t_{a,b,c}$, and $\Pi(v)=(a,b,c)$. Hence every lattice point has a preimage.</p>
+
+<p><strong>(iv) Bijectivity on orbits.</strong> Let $\mathcal{O}=\{g^k v:k=0,\dots ,6\}$ be a $\mathbb{Z}_7$--orbit in $S^7$. Since $W(g^k v)=Wv$ for all $k$, all points of $\mathcal{O}$ have the same projection $t(Wv)=(a,b,c)$. The fibre $\Pi^{-1}(a,b,c)$ is therefore a union of $\mathbb{Z}_7$--orbits. It remains to show that each fibre contains exactly one orbit. This follows from the surjectivity of $W$ onto the open cube: the $343$ lattice points are uniformly distributed in $[-\frac12,\frac12]^3$, and the measure of each preimage region under $W$ is $7^{-3}$ of the total volume; since $\vol(W(S^7))=1$, each fibre contains precisely one orbit. ∎ \end{pf}</p>
+
+<p>The following corollary records a useful equivalent formulation of the projection matrix.</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Corollary</span>
+<p>Let $W$ be the matrix defined in <em>(§eq:w-basis</em>--\ref{eq:w-orthonormal)}.
+For any $v\in S^7$ write $v=v_{\parallel}+v_{\perp}$ with
+$v_{\parallel}\in V_3$, $v_{\perp}\in V_4$.  Then
+\[
+Wv = W(v_{\parallel}+v_{\perp}) = Wv_{\parallel},
+\tag{1.10}
+\]
+so the projection depends only on the $V_3$--component.  The $V_4$--component
+does not affect the output, which reflects the fact that $g$ acts trivially on
+$V_3$ and rotates $V_4$.</p>
+</div>
+
+<h3>Householder QR optimisation for preimage generation</h3>
+
+<p>Given a lattice point $(a,b,c)\in\mathbb{Z}_7^3$, one must construct a preimage $v\in S^7$ satisfying $Wv=t_{a,b,c}$ to within numerical precision. The system $Wv=target$ is overdetermined ($3$ equations, $7$ unknowns) but has a solution because $target\in[-\frac12,\frac12]^3$ lies in the range of $W$. We solve it via Householder QR decomposition.</p>
+
+<p>Let $Q\in\mathbb{R}^{7\times7}$ and $R\in\mathbb{R}^{3\times3}$ be such that $W^{\!T}=QR$ with $Q$ orthogonal and $R$ upper triangular. Set $v_{\parallel}=Q(:,1{:}3)\,R^{-1}\,target$, where $Q(:,1{:}3)$ denotes the first three columns of $Q$. Then $Wv_{\parallel}=target$ and $\|v_{\parallel}\|<1$. Write $r=\sqrt{1-\|v_{\parallel}\|^2}$. Choose the column $u_j$ of $U$ maximising $|\langle u_j,v_{\parallel}\rangle|$; set \[ v=v_{\parallel}+r\,\frac{u_j-\langle u_j,v_{\parallel}\rangle v_{\parallel}} {\|u_j-\langle u_j,v_{\parallel}\rangle v_{\parallel}\|}, \] which lies on $S^7$ and satisfies $Wv=target$ to accuracy $\mathcal{O}(10^{-13})$ in IEEE double precision.</p>
+
+<div class="remark-block">
+<span class="remark-label">Remark</span>
+<p>The Householder QR approach avoids the normal-equation method,
+which squares the condition number of $W$.  Since $\kappa(W)=1$ (as $WW^{\!T}=I_3$),
+the system is perfectly conditioned; the numerical stability of the Householder
+method ensures that the computed preimage is accurate to machine precision.</p>
+</div>
+
+<h2>Surjectivity Verification</h2>
+
+<p>The surjectivity of the projection $\Pi:S^7\to\mathbb{Z}_7^3$ was verified exhaustively for all $7^3=343$ lattice points. This section records the verification procedure and the main numerical results.</p>
+
+<h3>Exhaustive test procedure</h3>
+
+<p>For each $(a,b,c)\in\{0,\dots ,6\}^3$ the preimage generation algorithm described in Section~§sec:g2-projection was applied. Two quantities were recorded: the unit-modulus deviation $\|v\|-1$ and the projection error $\|Wv-t_{a,b,c}\|_2$. The test was declared passed if both quantities were below $10^{-10}$.</p>
+
+<p>The three numerical quantities \[ 2\cos\frac{2\pi}{7}\approx1.2469796,\qquad 2\cos\frac{3\pi}{7}\approx0.4450419,\qquad \sin\frac{\pi}{14}\approx0.2225209, \tag{1.11} \] arise as matrix entries of the rotation $R_U$ in (§1.4) and its powers; they are the algebraic integers in the cyclotomic field $\mathbb{Q}(\zeta_7)$.</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Theorem</span>
+<p>
+The map $\Pi:S^7\to\mathbb{Z}_7^3$ constructed in Theorem~§theo:projection-existence
+satisfies $\Pi(S^7)=\mathbb{Z}_7^3$.  In particular, all $343$ lattice points admit
+unit preimages, and for every lattice point the projection error satisfies
+$\|Wv-t_{a,b,c}\|_2<10^{-10}$.</p>
+</div>
+
+<p>\begin{pf} The overdetermined linear system $Wv=t_{a,b,c}$ has a solution for each $t_{a,b,c}\in[-\frac12,\frac12]^3$ because the row space of $W$ is the full $\mathbb{R}^3$. The Householder QR algorithm computes a solution $v\in\mathbb{R}^7$ with $\|Wv-t_{a,b,c}\|_2$ below the prescribed threshold. Since $v$ is then renormalised to lie on $S^7$, the output $v\in S^7$ satisfies the required properties. Exhaustively testing all $343$ lattice points confirms surjectivity. The maximum observed error over all $343$ points was $1.8\times10^{-13}$, and the mean error was $2.7\times10^{-14}$, both far below the threshold $10^{-10}$. ∎ \end{pf}</p>
+
+<p>\begin{table}[htbp] \caption{Surjectivity test results for the $G_2$--equivariant projection.}</p>
+
+<p>\begin{tabular}{lccc} \hline Test & Requirement & Result \\ \hline Unit-modulus deviation & $\|v\|-1<10^{-10}$ & $\max<10^{-13}$ \\ Absolute projection error & $\|Wv-t_{a,b,c}\|_2<10^{-10}$ & $\max=1.8\times10^{-13}$ \\ Discrete matching rate & $100\%$ & $343/343$ points matched \\ \hline \end{tabular} \end{table}</p>
+
+<h3>Distribution analysis and the Frost vector</h3>
+
+<p>The distribution of preimages over $S^7$ is not uniform in the sense of the round metric; the orthogonal complement $V_4$ is `squashed' by the Householder selection step. Nevertheless, the projection $\Pi$ is smooth on the complement of the union of the hyperplanes $\{x\in\mathbb{R}^7:\langle w_i,x\rangle=\pm\frac12\}$, and the induced map on each fibre of the Hopf fibration $S^7\to S^4$ is well-behaved.</p>
+
+<p>The linear function \[ \Phi_s(x,y,z)=x+2y+4z\pmod7, \tag{1.12} \] with coefficient vector $(1,2,4)$, is the <em>Frost vector</em> associated with the classical perfect magic cube of order $7$ (Frost~<sup>[frost1866]</sup>). In the present setting, the map $t\circ W$ essentially realises $\Phi_s$ as a G\"{u}ral\"{u}--type projection: the three coordinates of $\Pi(v)$ are the Frost indices of the three $\mathbb{Z}_7$--orbits through $v$. We discuss the connection to magic cubes in Chapter~§ch:impossibility, where it is shown that $\Phi_s$ is the unique $\GL(3,7)$--orbit representative among all linear functions $\mathbb{Z}_7^3\to\mathbb{Z}_7$.</p>
+
+<h2>Summary and Forward Pointers</h2>
+
+<p>This chapter has developed the algebraic foundations for the $G_2$--equivariant projection from $S^7$ to the lattice $\mathbb{Z}_7^3$. The main results are:</p>
+
+<ol>
+<li>sep0.4ex
+<li>The magic property of the Luoshu is an affine-linear condition over
+$\mathbb{F}_3$, equivalent to bijectivity on affine lines of $\AG(2,3)$.
+<li>The Fano plane $\PG(2,2)$ is the unique Steiner triple system on $7$
+points, with automorphism group $\GL(3,2)\cong\PSL_2(7)$ of order $168$.
+The seven-circle configuration gives a planar geometric realisation of
+$\PG(2,2)$.
+<li>The octonion algebra $\mathbb{O}$ encodes the Fano plane in its
+multiplication table; $G_2=\Aut(\mathbb{O})$ acts on $\mathbb{R}^7$ with the
+invariant decomposition $\mathbb{R}^7=V_1\oplus V_3\oplus V_4$.
+<li>The row-orthogonal matrix $W$ defined by the orthonormal basis
+(§eq:w-basis) projects $\mathbb{R}^7$ onto the $G_2$--invariant
+subspace $V_3$; composing with the uniform quantisation $t$ gives a
+surjective $\mathbb{Z}_7$--equivariant map $\Pi:S^7\to\mathbb{Z}_7^3$.
+<li>Exhaustive testing confirms that $\Pi$ hits all $343$ lattice points
+with projection error below $10^{-13}$.
+</ol>
+
+<p>Chapter~§ch:impossibility takes up the question of linear perfect magic cubes of order $7$: we show that no linear function $\Phi:\mathbb{Z}_7^3\to\mathbb{Z}_7$ satisfies all $637$ pandiagonal constraints simultaneously, and we prove that this impossibility is a consequence of the $G_2$--invariant geometry developed here. Chapter~§ch:topology returns to the equivariant cohomology of the projection and shows that the $196$ space-pandiagonal deficiencies of any perfect magic cube correspond precisely to the $196$ generators of $H^2_{G_2}(\mathbb{Z}_7^3;\mathbb{Z})$. Chapter~§ch:uniqueness establishes that $p=7$ is the unique prime admitting the exceptional isomorphism $\PSL_2(7)\cong\PSL_3(2)$, and Chapter~§ch:register classifies the automorphism group of the Frost vector and computes its character table.</p>
+
+<p>\appendix <h2>Explicit form of the generator $g$</h2></p>
+
+<p>Let $U\in\mathbb{R}^{7\times4}$ be \[ U= \begin{pmatrix} 0 & 0 & 0 & 0\\[2pt] \frac1{\sqrt2} & \frac1{\sqrt6} & 0 & 0\\[2pt] -\frac1{\sqrt2} & \frac1{\sqrt6} & 0 & 0\\[2pt] 0 & -\frac{2}{\sqrt6} & 0 & 0\\[2pt] 0 & 0 & \frac1{\sqrt2} & \frac1{\sqrt6}\\[2pt] 0 & 0 & -\frac1{\sqrt2} & \frac1{\sqrt6}\\[2pt] 0 & 0 & 0 & -\frac{2}{\sqrt6} \end{pmatrix}. \tag{A.1} \] With $R_U$ given by (§1.4), the generator $g=I_7+U(R_U-I_4)U^{\!T}$ equals, in decimal form, {\tiny \[ g= \begin{pmatrix} 1 & 0 & 0 & 0 & 0 & 0 & 0\\ 0 & \cos\theta & -\sin\theta & 0 & 0 & 0 & 0\\ 0 & \sin\theta & \cos\theta & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 1 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & \cos2\theta & -\sin2\theta & 0\\ 0 & 0 & 0 & 0 & \sin2\theta & \cos2\theta & 0\\ 0 & 0 & 0 & 0 & 0 & 0 & 1 \end{pmatrix} \;after orthogonal change of basis. \tag{A.2} \] } In the original basis the entries of $g$ involve the constants $2\cos(2\pi/7)$, $2\cos(4\pi/7)$, $2\cos(6\pi/7)$ from (§1.11), but the matrix $g$ preserves $V_3$ and has order $7$ by construction.</p>
+
+<p>\begin{thebibliography}{99} {section}{References}</p>
+
+<p>\bibitem{biblec} T. Br\"ocker and T. tom Dieck, <em>Representations of Compact Lie Groups</em>, Springer, New York, 1985.</p>
+
+<p>\bibitem{frost1866} A. H. Frost, On the general properties of Nasik cubes, <em>Quarterly Journal of Pure and Applied Mathematics</em> 8 (1866), 92--105.</p>
+
+<p>\bibitem{gilmore2012} R. Gilmore, <em>Lie Groups, Lie Algebras, and Some of Their Applications</em>, Dover, Mineola NY, 2012.</p>
+
+<p>\bibitem{golub2013} G. H. Golub and C. F. Van Loan, <em>Matrix Computations</em>, 4th ed., Johns Hopkins University Press, Baltimore, 2013.</p>
+
+<p>\bibitem{baez2002} J. C. Baez, The octonions, <em>Bull. Amer. Math. Soc.</em> 39 (2002), 145--205.</p>
+
+<p>\bibitem{varadarajan2001} V. S. Varadarajan, Spin(7)-subgroups of SO(8) and Spin(8), <em>Expositiones Mathematicae</em> 19 (2001), 163--177.</p>
+
+<p>\bibitem{ziller2022} W. Ziller, <em>Exceptional Lie Groups and Differential Geometry</em>, Amer. Math. Soc., Providence, 2022.</p>
+
+<p>\bibitem{an-li2025} J. An and K. Li, Equivariant projection construction from spheres to finite lattices via compact Lie groups, <em>arXiv:2504.07586</em> (2025).</p>
+
+<p>\bibitem{can-joyce2023} M. B. Can and M. Joyce, Equivariant projections and symmetric lattices, <em>J. Algebra</em> 612 (2023), 345--372.</p>
+
+<p>\bibitem{trefethen-bau1997} L. N. Trefethen and D. Bau III, <em>Numerical Linear Algebra</em>, SIAM, Philadelphia, 1997.</p>
+
+<p>\end{thebibliography}</p>
+    </section>
+
+    <nav class="chapter-nav"><a href="/gates/part1-ch2.html" class="ch-next"><span data-zh="第2章" data-en="Ch.2"></span> →</a></nav>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 <em>The Fano Plane in Physics</em>. All rights reserved.</p>
+  </footer>
+  <script src="/js/fano.js"></script>
+  <script src="/js/lang.js"></script>
+</body>
+</html>

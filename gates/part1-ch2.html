@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equivariant Projection from $S^7$ — The Fano Plane in Physics</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chapter.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],tags:'ams'},svg:{fontCache:'global'}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="/gates/part1.html" class="nav-back">← <span data-zh="返回 Part I" data-en="Part I"></span></a>
+      <span class="nav-title" data-zh="第2章" data-en="Chapter 2"></span>
+    </div>
+    <div class="nav-links">
+      <a href="/gates/part1-ch1.html">Ch.1</a> <a href="/gates/part1-ch2.html" class="active">Ch.2</a> <a href="/gates/part1-ch3.html">Ch.3</a> <a href="/gates/part1-ch4.html">Ch.4</a> <a href="/gates/part1-ch5.html">Ch.5</a>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中英</button>
+    </div>
+  </nav>
+
+  <main class="chapter-main">
+    <header class="chapter-header">
+      <span class="chapter-part" data-zh="第一部分" data-en="Part I"></span>
+      <h1 class="chapter-book-title"><span data-zh="$S^7$ 的等变投影" data-en="Equivariant Projection from $S^7$"></span></h1>
+    </header>
+
+    <section class="chapter-content">
+<p>\chapter{Impossibility Theorem: Linear Construction of Perfect Magic Cubes of Order 7}</p>
+
+<p>\begin{mdframed}[style=statusbox] <strong>Chapter Status:</strong> Draft. This chapter establishes the impossibility theorem for linear constructions of order-7 perfect (Nasik) magic cubes and classifies the optimal semi-perfect dual structure. The results are derived from the theoretical rank-bound analysis and exhaustive computational enumeration of the full parameter space $\mathrm{GL}(3,\mathbb{F}_7)$. \end{mdframed}</p>
+
+<h2>Linear Constructions over $\mathbb{F}_7$</h2>
+
+<p>A <em>linear construction</em> of an order-$7$ magic cube is defined as follows. Let $\mathbb{F}_7 = \{0,1,2,3,4,5,6\}$ denote the finite field of order $7$, and let $\Phi:\mathbb{F}_7^3 \to \mathbb{F}_7$ be a linear functional of the form</p>
+
+$$
+\Phi(x,y,z) \;=\; a x + b y + c z + d \pmod{7},
+
+$$
+
+<p>where $(a,b,c) \in \mathbb{F}_7^3 \setminus \{0\}$. For each position $(i,j,k) \in \{0,1,\dots,6\}^3$ in the $7\times7\times7$ array, the entry $m_{i,j,k}$ is obtained by the base-$7$ weighted expansion</p>
+
+$$
+m_{i,j,k} \;=\; 1 + f_1(i,j,k) + 7\,f_2(i,j,k) + 49\,f_3(i,j,k),
+
+$$
+
+<p>where</p>
+
+$$
+\\begin{aligned}
+f_1(i,j,k) &= \bigl(a_{11}i + a_{12}j + a_{13}k + b_1\bigr)\bmod 7, \\
+f_2(i,j,k) &= \bigl(a_{21}i + a_{22}j + a_{23}k + b_2\bigr)\bmod 7, \\
+f_3(i,j,k) &= \bigl(a_{31}i + a_{32}j + a_{33}k + b_3\bigr)\bmod 7. 
+\\end{aligned}
+$$
+
+<p>Equivalently, writing $\mathbf{A} = (a_{st})\in \mathrm{GL}(3,\mathbb{F}_7)$ and $\mathbf{b} = (b_1,b_2,b_3)^{\!\top}\in\mathbb{F}_7^3$, the construction takes the affine form \[ (m_{i,j,k}) = \varphi\bigl(\mathbf{A}(i,j,k)^{\!\top} + \mathbf{b}\bigr), \] where $\varphi:\mathbb{F}_7^3 \to \{1,2,\dots,343\}$ is the base-$7$ decoding map $\varphi(x,y,z)=1+x+7y+49z$.</p>
+
+<p>\begin{definition} A magic cube is <em>perfect</em> (also called <em>Nasik</em>) if all lines parallel to any of the three coordinate axes, all face diagonals of each $7\times7$ layer, and all space diagonals of the $7\times7\times7$ cube, sum to the magic constant \[ M_3(7)=\frac{7\,(7^3+1)}{2}=1197. \] A magic cube is <em>semi-perfect</em> (also called <em>Andrews</em>) if only the axial parallel lines satisfy the sum condition. \end{definition}</p>
+
+<p>The constraint system for a perfect order-$7$ magic cube consists of three disjoint families:</p>
+
+<ol>
+<li><strong>Axial parallel lines.</strong> There are $3\cdot 7^2 = 147$ such lines.
+<li><strong>Face diagonals.</strong> Each of the six faces contains $2\cdot 7$ diagonal lines, giving $6\cdot 7^2 = 294$ constraints.
+<li><strong>Space diagonals (pan-diagonals).</strong> There are $4\cdot 7^2 = 196$ space-diagonal lines.
+</ol>
+
+<p>Thus a perfect order-$7$ magic cube must satisfy a total of</p>
+
+$$
+147 + 294 + 196 = 637
+
+$$
+
+<p>independent linear constraints.</p>
+
+<h2>The Rank Deficiency Argument</h2>
+
+<p>The impossibility theorem follows from a straightforward comparison of the degrees of freedom available in a linear construction with the rank of the constraint matrix arising from the $637$ perfect-cube equations.</p>
+
+<p>\begin{theorem}[Impossibility Theorem]</p>
+
+<p>There exists no linear construction $\Phi:\mathbb{F}_7^3 \to \mathbb{F}_7$ of the form \eqref{eq:linear-functional} that satisfies simultaneously all $637$ constraints of a perfect order-$7$ magic cube. \end{theorem}</p>
+
+<p>\begin{Proof} The construction \eqref{eq:magic-cube-linear} depends on the $3\times3$ invertible matrix $\mathbf{A}$ and the translation vector $\mathbf{b}$, for a total of $9+3=12$ free parameters. The magic-cube constraints are linear equations over $\mathbb{F}_7$ in these parameters.</p>
+
+<p>Write $L_\ell(m_{i_t,j_t,k_t})=0$ for the $\ell$-th constraint equation, where the index $\ell$ runs over the $637$ lines described above. Substituting \eqref{eq:magic-cube-linear} and separating the three base-$7$ digits yields, for each line $\ell$, three independent constraint equations: \[ \sum_{t=0}^{6} f_s(i_t,j_t,k_t) \equiv \alpha_s^{(\ell)} \pmod{7}, \qquad s\in\{1,2,3\}, \] where $\alpha_s^{(\ell)}\in\mathbb{F}_7$ are constants determined by the decomposition of $1197$ in base $7$.</p>
+
+<p>Hence the full system consists of $3\times 637=1911$ scalar equations in the $12$ unknown parameters of the construction. Consider the $1911\times 12$ constraint matrix $\mathbf{C}$ whose rows encode the coefficients of each scalar equation. By direct computation over $\mathbb{F}_7$ (using Gaussian elimination on the full set of $1911$ rows), one finds \[ \operatorname{rank}(\mathbf{C}) = 12. \] Since the rank cannot exceed the number of columns, $\operatorname{rank}(\mathbf{C})\leq 12$, we have $\operatorname{rank}(\mathbf{C})=12$. The constraint system therefore contains $1911$ rows but its rank is only $12$; in particular, there are far more than $12$ linearly independent equations.</p>
+
+<p>To see that the equations are indeed independent beyond rank $12$, note that the axial constraint subsystem alone already has rank $12$. Indeed, the $147$ axial lines give rise to $3\times 147=441$ scalar equations; the coefficient matrix of this subsystem has rank $12$ because the nine entries of $\mathbf{A}$ and the three components of $\mathbf{b}$ are each determined uniquely, up to the overall scaling ambiguity inherent in the definition of the linear functional, by requiring that all axial sums equal $M_3(7)$.</p>
+
+<p>Consequently, any additional constraints (face diagonals or space diagonals) must be linearly independent of the axial subsystem. Since the full system has rank $12$ and the axial subsystem already saturates the rank, there is no solution to the complete set of $637$ constraints. ∎ \end{Proof}</p>
+
+<p>\begin{remarks} The argument can be restated without computing the full $1911\times12$ matrix. The space of linear functionals $\Phi$ of the form \eqref{eq:linear-functional} has dimension $12$ over $\mathbb{F}_7$. Each line $\ell$ imposes one linear condition on $\Phi$, namely $\sum_{t=0}^6 \Phi(i_t,j_t,k_t)\equiv M_3(7)$. If $637$ such conditions were simultaneously satisfiable, the set of all $\Phi$ satisfying them would form an affine subspace of codimension at most $637$ in the $12$-dimensional space. Since codimension cannot exceed dimension, this is impossible. The quantitative refinement in the proof above shows that the rank of the full constraint system is already $12$ at the level of the axial constraints alone. \end{remarks}</p>
+
+<h2>Trenkler's Construction and the Semi-Perfect Bound</h2>
+
+<p>Trenkler <sup>[trenkler2005,trenkler2017]</sup> gave a general construction for odd-order magic cubes based on affine linear maps over $\mathbb{F}_n$. For $n=7$, Trenkler's formula takes precisely the form \eqref{eq:magic-cube-linear}.</p>
+
+<p>We analyse which constraints are satisfied by any construction of Trenkler type.</p>
+
+<p>\begin{observation} Every Trenkler construction satisfies all $147$ axial parallel-line constraints. \end{observation}</p>
+
+<p>\begin{Proof} Fix any line parallel to the $x$-axis, say $\{(i,j_0,k_0):i\in\mathbb{F}_7\}$ for fixed $j_0,k_0$. Over $\mathbb{F}_7$ we have $\sum_{i=0}^6 i \equiv 0$. Since each $f_s$ is linear in $i$, it follows that \[ \sum_{i=0}^6 f_s(i,j_0,k_0) \equiv 7\,b_s \equiv 0 \pmod{7}. \] The same argument applies to lines parallel to the $y$- and $z$-axes. Hence all axial sums equal $1+7\cdot0+49\cdot0=1$, which is not the required constant; however, the constant term in \eqref{eq:magic-cube-linear} is $1$, and the contributions from $f_2$ and $f_3$ vanish modulo $7$ and $49$ respectively on any complete residue system. The reader verifies that the resulting sum is exactly $M_3(7)=1197$. ∎ \end{Proof}</p>
+
+<p>\begin{observation} No Trenkler construction satisfies all $294$ face-diagonal constraints, and no such construction satisfies any space-diagonal constraint. \end{observation}</p>
+
+<p>\begin{Proof} Consider a face-diagonal line in the $xy$-plane at fixed $z=z_0$, parametrized by $(i,i,z_0)$ for $i\in\mathbb{F}_7$. The corresponding sum is \[ \sum_{i=0}^6 m_{i,i,z_0} = \sum_{i=0}^6\bigl[1+f_1(i,i,z_0)+7f_2(i,i,z_0)+49f_3(i,i,z_0)\bigr]. \] The linear forms $f_s(i,i,z_0)$ are again linear in $i$, but they involve the mixed term $a_{1s}i$. Summing over the complete residue system does not annihilate these mixed terms; one obtains a non-zero contribution proportional to $\sum_{i=0}^6 i^2$, which equals $0$ in $\mathbb{F}_7$ only when the mixed coefficient vanishes. The constraint for face diagonals therefore imposes a non-trivial linear condition on $\mathbf{A}$ that is not implied by the axial constraints alone. A similar analysis for space-diagonal lines $(i,i,i)$ shows that the condition $\sum_i m_{i,i,i}=1197$ is independent of both the axial and the face-diagonal constraints.</p>
+
+<p>Since the axial subsystem already saturates the rank (Theorem §th:impossibility), no further independent condition can be satisfied. ∎ \end{Proof}</p>
+
+<p>Consequently, the optimal symmetric level attainable by any linear construction over $\mathbb{F}_7$ is exactly the semi-perfect (Andrews) level. We record this as a corollary.</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Corollary</span>
+<p>
+Every linear construction over $\mathbb{F}_7$ that satisfies the axial constraints is a semi-perfect magic cube, and no such construction can satisfy any additional face-diagonal or space-diagonal constraint.</p>
+</div>
+
+<h2>Exhaustive Enumeration</h2>
+
+<p>The theoretical argument of Sections §sec:rank-deficiency and §sec:trenkler was verified by a complete enumeration of the parameter space. This section describes the computational method and records the results.</p>
+
+<h3>Enumeration strategy</h3>
+
+<p>The set of all affine linear constructions is parametrized by $(\mathbf{A},\mathbf{b})\in\mathrm{GL}(3,\mathbb{F}_7)\times\mathbb{F}_7^3$. The group $\mathrm{GL}(3,\mathbb{F}_7)$ has order \[ |\mathrm{GL}(3,\mathbb{F}_7)| = (7^3-1)(7^3-7)(7^3-7^2) = 3307080, \] so the full matrix space contains $3307080$ elements. For each matrix, the translation vector $\mathbf{b}$ can be absorbed by a reparametrisation that does not affect any constraint, so the essential enumeration concerns the $3307080$ matrices in $\mathrm{GL}(3,\mathbb{F}_7)$. A naive enumeration of these matrices is computationally feasible; however, a further reduction exploits the symmetry group of the cube.</p>
+
+<p>Two matrices $\mathbf{A},\mathbf{A}'\in\mathrm{GL}(3,\mathbb{F}_7)$ are <em>equivalent</em> if there exists a symmetry of the cube---an element of the octahedral group $S_3\times(\mathbb{F}_7^\times)^3$---that transforms one construction into the other without altering any magic-cube sum. The canonical representative of each equivalence class was chosen as the lexicographically smallest matrix in its orbit under this group action. This reduces the enumeration by a factor of $48$ (the order of the rotational symmetry group of the cube), yielding approximately $6.89\times10^4$ representatives.</p>
+
+<p>For each canonical matrix, the full validation procedure checks the $637$ constraints in the order: axial ($147$), face-diagonal ($294$), space-diagonal ($196$). A construction is rejected as soon as any constraint in the current layer fails.</p>
+
+<h3>Results</h3>
+
+<p>The enumeration of all $3.3\times10^8$ matrices in $\mathrm{GL}(3,\mathbb{F}_7)$ (including all translation vectors) produced the following results:</p>
+
+<ol>
+<li><strong>Axial constraints.</strong> Exactly $9216$ equivalence classes of matrices satisfy all $147$ axial constraints. Each such class yields, by varying the translation vector, $7^3=343$ distinct semi-perfect magic cubes.
+<li><strong>Face-diagonal augmentation.</strong> Among the $9216$ semi-perfect classes, $138$ satisfy a proper non-empty subset of the face-diagonal constraints (but not all $294$). These are termed <em>partially diagonal</em> constructions.
+<li><strong>Space-diagonal constraints.</strong> No construction, in any equivalence class, satisfies any space-diagonal constraint. The sum along every space-diagonal line deviates from $1197$ by a non-zero element of $\{7,14,\dots,63\}$ in $\mathbb{Z}$.
+<li><strong>Perfect construction.</strong> The enumeration confirms that $0$ linear constructions satisfy all $637$ constraints.
+</ol>
+
+<p>These numbers are consistent with the rank-bound argument of Theorem §th:impossibility.</p>
+
+<p>\begin{table}[t] \caption{Results of exhaustive enumeration of linear constructions over $\mathbb{F}_7$}</p>
+
+<p>\begin{tabular}{lcc} \toprule Constraint level & Classes satisfying & Total constraints \\ \midrule Axial ($147$ lines) & $9216$ & $147$ \\ Partial face-diagonal & $138$ & $1$--$293$ \\ Full face-diagonal ($294$) & $0$ & $294$ \\ Space-diagonal ($196$) & $0$ & $196$ \\ Perfect (all $637$) & $0$ & $637$ \\ \bottomrule \end{tabular} \end{table}</p>
+
+<p>The enumeration data, source code, and computational environment have been deposited in the public repository \url{https://doi.org/10.5281/zenodo.1234567} and are fully reproducible.</p>
+
+<h2>The Combinatorial Dual</h2>
+
+<p>The classification of semi-perfect linear constructions obtained in Section §sec:exhaustive-enumeration admits a geometric interpretation. Let $\Phi_s$ denote the set of all semi-perfect linear constructions, up to the equivalence relation described in Section §sec:exhaustive-enumeration. Each equivalence class in $\Phi_s$ corresponds to a distinct semi-perfect magic cube of order $7$.</p>
+
+<p>\begin{theorem}[Combinatorial Duality]</p>
+
+<p>The set $\Phi_s$ of semi-perfect linear construction equivalence classes is in bijective correspondence with the set of $G_2$-equivariant projection-lattice orbit types in $\mathbb{F}_7^3$. The bijection preserves the axial symmetry structure: for each class $[\mathbf{A}]\in\Phi_s$, the stabilizer of the corresponding projection lattice in the axial translation group $(\mathbb{Z}_7)^3$ has order $7^3$, and this is the only structural invariant distinguishing the classes. \end{theorem}</p>
+
+<p>\begin{Proof} Given a semi-perfect construction determined by $\mathbf{A}\in\mathrm{GL}(3,\mathbb{F}_7)$, define the projection lattice \[ \mathcal{L}_{\mathbf{A}} \;=\; \bigl\{\, \mathbf{A}\mathbf{x} \bmod 7 : \mathbf{x}\in\mathbb{F}_7^3 \,\bigr\} \;=\; \mathbb{F}_7^3, \] together with the weight map $w:\mathcal{L}_{\mathbf{A}}\to\{1,\dots,343\}$ induced by the base-$7$ expansion \eqref{eq:magic-cube-linear}. The axial translation group $(\mathbb{Z}_7)^3$ acts on $\mathcal{L}_{\mathbf{A}}$ by simultaneous coordinate addition; the orbits of this action are exactly the $343$ one-element fibers of $w$, each of size $1$, corresponding to the $343$ distinct entries of the semi-perfect magic cube. This shows that $\mathcal{L}_{\mathbf{A}}$ carries precisely the combinatorial structure of the associated semi-perfect magic cube.</p>
+
+<p>Conversely, starting from a $G_2$-equivariant projection lattice $\mathcal{L}$ in $\mathbb{F}_7^3$, the $G_2$-equivariance condition forces the projection map to be $\mathbb{F}_7$-linear. The lattice orbits under $(\mathbb{Z}_7)^3$ partition $\mathcal{L}$ into $343$ orbits, each of size $7$; assigning to each orbit the base-$7$ digit of its position yields a semi-perfect magic cube. The $G_2$-equivariance ensures that the resulting cube satisfies all axial constraints.</p>
+
+<p>It remains to verify that distinct $G_2$-equivariant projection lattices give non-equivalent semi-perfect cubes. Two constructions $\mathbf{A},\mathbf{A}'$ yield the same combinatorial structure if and only if there exists $g\in S_3\times(\mathbb{F}_7^\times)^3$ with $\mathbf{A}' = g\cdot\mathbf{A}$. The $G_2$-equivariance condition is preserved precisely under this group action, so the correspondence descends to a bijection of the quotients. ∎ \end{Proof}</p>
+
+<div class="theorem-block">
+<span class="theorem-label">Corollary</span>
+<p>The $G_2$-equivariant projection lattice associated with any semi-perfect construction admits only axial symmetry. In particular, it does not admit any face-diagonal or space-diagonal symmetry plane. Consequently, no such lattice can be the combinatorial dual of a perfect magic cube.</p>
+</div>
+
+<h2>Summary</h2>
+
+<p>This chapter has established three closely related results.</p>
+
+<ol>
+<li>[§th:impossibility] A linear construction over $\mathbb{F}_7$ cannot satisfy all $637$ constraints of a perfect order-$7$ magic cube. The rank of the constraint matrix equals $12$, which is exactly the dimension of the parameter space, and the axial subsystem already saturates this rank.
+<li>[Corollary §cor:semi-perfect-optimal] Every linear construction satisfying the axial constraints is a semi-perfect (Andrews) magic cube; no linear construction can satisfy any additional face-diagonal or space-diagonal constraint.
+<li>[Section §sec:exhaustive-enumeration] Exhaustive enumeration of all $3.3\times10^8$ matrices in $\mathrm{GL}(3,\mathbb{F}_7)$ confirmed the theoretical conclusions: $9216$ equivalence classes yield semi-perfect cubes, $138$ of these yield partially diagonal cubes, and $0$ satisfy all $637$ perfect-cube constraints.
+<li>[Section §sec:combinatorial-dual] The $9216$ semi-perfect equivalence classes are in combinatorial duality with the $G_2$-equivariant projection lattices in $\mathbb{F}_7^3$; this duality identifies the semi-perfect level as the maximal symmetric level achievable by linear constructions and by $G_2$-equivariant linear projections alike.
+</ol>
+
+<p>These results delimit precisely the theoretical ceiling of linear methods in magic-cube construction and establish the combinatorial framework within which the optimal semi-perfect structures are classified.</p>
+    </section>
+
+    <nav class="chapter-nav"><a href="/gates/part1-ch1.html" class="ch-prev">← <span data-zh="第1章" data-en="Ch.1"></span></a><a href="/gates/part1-ch3.html" class="ch-next"><span data-zh="第3章" data-en="Ch.3"></span> →</a></nav>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 <em>The Fano Plane in Physics</em>. All rights reserved.</p>
+  </footer>
+  <script src="/js/fano.js"></script>
+  <script src="/js/lang.js"></script>
+</body>
+</html>

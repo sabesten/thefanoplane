@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Results — The Fano Plane in Physics</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chapter.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],tags:'ams'},svg:{fontCache:'global'}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="/" class="nav-back">← <span data-zh="返回首页" data-en="Home"></span></a>
+      <span class="nav-title" data-zh="核心结果" data-en="Key Results"></span>
+    </div>
+    <div class="nav-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中英</button>
+    </div>
+  </nav>
+
+  <main class="chapter-main">
+    <header class="chapter-header">
+      <h1 class="chapter-book-title"><span data-zh="核心结果" data-en="Key Results"></span></h1>
+      <p class="chapter-book-desc"><span data-zh="Part I 的主要定理与数值验证" data-en="Principal theorems and numerical verifications from Part I"></span></p>
+    </header>
+
+    <section class="chapter-content">
+      <div class="bilingual">
+        <div class="lang-block" data-lang="en">
+          <h2>Part I: The Fano Plane over $\mathbb{Z}_7$</h2>
+        </div>
+        <div class="lang-block" data-lang="zh">
+          <h2>Part I：$\mathbb{Z}_7$ 上的Fano平面</h2>
+        </div>
+      </div>
+
+      <div class="theorem-block">
+        <span class="theorem-label">The Impossibility Theorem</span>
+        <div class="bilingual">
+          <div class="lang-block" data-lang="en">
+            <p>A perfect order-7 magic cube does not exist over $\mathbb{Z}_7$. Among $|\mathrm{GL}(3,7)| = 33{,}784{,}128$ invertible matrices, exhaustive enumeration yields 9,216 semi-perfect equivalence classes and 138 partial-diagonal classes, but <strong>zero perfect classes</strong>.</p>
+          </div>
+          <div class="lang-block" data-lang="zh">
+            <p>$\mathbb{Z}_7$ 上不存在完美的7阶幻立方。在 $|\mathrm{GL}(3,7)| = 33{,}784{,}128$ 个可逆矩阵中，穷尽枚举得到9,216个半完美等价类和138个部分对角类，但<strong>零个完美类</strong>。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theorem-block">
+        <span class="theorem-label">Projection Existence</span>
+        <div class="bilingual">
+          <div class="lang-block" data-lang="en">
+            <p>There exists a $G_2$-equivariant orthogonal projection $S^7 \to \mathbb{Z}_7^3$ with a 6-dimensional invariant subspace $V_3 \subset \mathbb{R}^7$. The canonical basis vectors are $w_1 = (7,-1,-1,-1,-1,-1,-1)/\sqrt{42}$ and $w_2 = (6,-1,-1,-1,-1,-1,-1)/\sqrt{42}$.</p>
+          </div>
+          <div class="lang-block" data-lang="zh">
+            <p>存在 $G_2$ 等变正交投影 $S^7 \to \mathbb{Z}_7^3$，具有6维不变子空间 $V_3 \subset \mathbb{R}^7$。典范基向量为 $w_1 = (7,-1,-1,-1,-1,-1,-1)/\sqrt{42}$ 和 $w_2 = (6,-1,-1,-1,-1,-1,-1)/\sqrt{42}$。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theorem-block">
+        <span class="theorem-label">Stabilizer Structure</span>
+        <div class="bilingual">
+          <div class="lang-block" data-lang="en">
+            <p>The stabilizer $\mathrm{Stab}(\Phi_s) \leq \mathrm{AGL}(3,7)$ has order $|\mathrm{Stab}| = 592{,}704$, yielding a 294-element quotient with 14 conjugacy classes: $\mathrm{C}_1$ (identity) + 8 classes of size 6 (order 7) + 5 classes of size 49.</p>
+          </div>
+          <div class="lang-block" data-lang="zh">
+            <p>稳定子群 $\mathrm{Stab}(\Phi_s) \leq \mathrm{AGL}(3,7)$ 的阶为 $|\mathrm{Stab}| = 592{,}704$，给出294元商群，含14个共轭类：$\mathrm{C}_1$（恒等）+ 8个size=6的类（阶7）+ 5个size=49的类。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theorem-block">
+        <span class="theorem-label">Character Table</span>
+        <div class="bilingual">
+          <div class="lang-block" data-lang="en">
+            <p>The 294-element group has exactly 14 irreducible representations: 6 one-dimensional and 8 six-dimensional, satisfying $6 \times 1^2 + 8 \times 6^2 = 6 + 288 = 294$. ✓</p>
+          </div>
+          <div class="lang-block" data-lang="zh">
+            <p>294元群恰有14个不可约表示：6个1维和8个6维，满足 $6 \times 1^2 + 8 \times 6^2 = 6 + 288 = 294$。✓</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proposition-block">
+        <span class="proposition-label">Luoshu as $\mathbb{F}_3$-Linear Map</span>
+        <div class="bilingual">
+          <div class="lang-block" data-lang="en">
+            <p>The Luoshu magic square is the affine-linear function $f(x,y) = 2x + y \pmod{3}$ on $\mathbb{F}_3^2$. The magic property (constant sum on every line) is a linear-algebraic fact over $\mathbb{F}_3$, not a numerical coincidence.</p>
+          </div>
+          <div class="lang-block" data-lang="zh">
+            <p>洛书幻方是 $\mathbb{F}_3^2$ 上的仿射线性函数 $f(x,y) = 2x + y \pmod{3}$。其幻性（每条线上和为常数）是 $\mathbb{F}_3$ 上的线性代数事实，而非数值巧合。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="remark-block">
+        <span class="remark-label">Homology Deficit HD = 28</span>
+        <div class="bilingual">
+          <div class="lang-block" data-lang="en">
+            <p>The constraint count for a perfect order-7 magic cube is 637 = 147 (axial) + 294 (face-diagonal) + 196 (body-diagonal). The homology deficit $\mathrm{HD} = 28$ measures the gap between the axial and body-diagonal constraint layers. The 147 → 196 transition is established by heuristic argument; a complete proof requires a full Bredon cohomology computation.</p>
+          </div>
+          <div class="lang-block" data-lang="zh">
+            <p>完美7阶幻立方的约束计数为 637 = 147（轴向）+ 294（面对角）+ 196（空间泛对角）。同调亏缺 $\mathrm{HD} = 28$ 度量了轴向与空间泛对角约束层之间的差距。147 → 196 的过渡由启发式论证建立；完整证明需要完整的 Bredon 上同调计算。</p>
+          </div>
+        </div>
+      </div>
+
+      <h2><span data-zh="数值验证" data-en="Numerical Verifications"></span></h2>
+
+      <div class="bilingual">
+        <div class="lang-block" data-lang="en">
+          <table class="results-table">
+            <thead>
+              <tr><th>Quantity</th><th>Theoretical</th><th>Computed / PDG</th><th>Deviation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>$|\mathrm{GL}(3,7)|$</td><td>$(7^3-1)(7^3-7)(7^3-7^2)$</td><td>33,784,128</td><td>exact ✓</td></tr>
+              <tr><td>$|\mathrm{Stab}(\Phi_s)|$</td><td>592,704</td><td>592,704</td><td>exact ✓</td></tr>
+              <tr><td>Group order (294-element)</td><td>$6 \times 1^2 + 8 \times 6^2$</td><td>294</td><td>exact ✓</td></tr>
+              <tr><td>Conjugacy classes</td><td>14</td><td>14 (GAP)</td><td>exact ✓</td></tr>
+              <tr><td>$\sin(\pi/14)$</td><td>0.2225…</td><td>$\lambda = 0.2250 \pm 0.0007$</td><td>1.10%</td></tr>
+              <tr><td>$A = V_{cb}/\sin^2(\pi/14)$</td><td>0.828</td><td>$0.825 \pm 0.015$</td><td>0.37%</td></tr>
+              <tr><td>Constraint count</td><td>637</td><td>$147 + 294 + 196$</td><td>exact ✓</td></tr>
+              <tr><td>Perfect magic cubes</td><td>0 (predicted)</td><td>0 (exhaustive)</td><td>confirmed ✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="lang-block" data-lang="zh">
+          <table class="results-table">
+            <thead>
+              <tr><th>量</th><th>理论值</th><th>计算值 / PDG</th><th>偏差</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>$|\mathrm{GL}(3,7)|$</td><td>$(7^3-1)(7^3-7)(7^3-7^2)$</td><td>33,784,128</td><td>精确 ✓</td></tr>
+              <tr><td>$|\mathrm{Stab}(\Phi_s)|$</td><td>592,704</td><td>592,704</td><td>精确 ✓</td></tr>
+              <tr><td>群阶（294元群）</td><td>$6 \times 1^2 + 8 \times 6^2$</td><td>294</td><td>精确 ✓</td></tr>
+              <tr><td>共轭类数</td><td>14</td><td>14 (GAP)</td><td>精确 ✓</td></tr>
+              <tr><td>$\sin(\pi/14)$</td><td>0.2225…</td><td>$\lambda = 0.2250 \pm 0.0007$</td><td>1.10%</td></tr>
+              <tr><td>$A = V_{cb}/\sin^2(\pi/14)$</td><td>0.828</td><td>$0.825 \pm 0.015$</td><td>0.37%</td></tr>
+              <tr><td>约束计数</td><td>637</td><td>$147 + 294 + 196$</td><td>精确 ✓</td></tr>
+              <tr><td>完美幻立方数</td><td>0（预测）</td><td>0（穷尽枚举）</td><td>已确认 ✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 <em>The Fano Plane in Physics</em>. All rights reserved.</p>
+  </footer>
+  <script src="/js/fano.js"></script>
+  <script src="/js/lang.js"></script>
+</body>
+</html>

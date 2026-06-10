@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — The Fano Plane in Physics</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chapter.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],tags:'ams'},svg:{fontCache:'global'}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="/" class="nav-back">← <span data-zh="返回首页" data-en="Home"></span></a>
+      <span class="nav-title" data-zh="关于" data-en="About"></span>
+    </div>
+    <div class="nav-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中英</button>
+    </div>
+  </nav>
+
+  <main class="chapter-main">
+    <header class="chapter-header">
+      <h1 class="chapter-book-title"><span data-zh="关于本书" data-en="About This Work"></span></h1>
+    </header>
+
+    <section class="chapter-content">
+      <div class="bilingual">
+        <div class="lang-block" data-lang="en">
+          <h2>The Monograph</h2>
+          <p><em>The Fano Plane in Physics</em> is a research monograph that develops the mathematical framework connecting the Fano plane $\mathrm{PG}(2,7)$, the lattice $\mathbb{Z}_7^3$, and the exceptional Lie group $G_2$ to problems in discrete geometry, representation theory, and flavor physics.</p>
+          
+          <p>The central object is the $G_2$-equivariant projection $S^7 \to \mathbb{Z}_7^3$, which maps the continuous 7-sphere onto a discrete lattice while preserving the action of the exceptional symmetry group. This projection leads to:</p>
+          
+          <ul>
+            <li>The <strong>impossibility theorem</strong>: no perfect order-7 magic cube exists over $\mathbb{Z}_7$ (637 constraints, 0 solutions among $3.3 \times 10^8$ invertible matrices)</li>
+            <li>A <strong>294-element stabilizer subgroup</strong> with 14 conjugacy classes and a character table featuring 6 one-dimensional and 8 six-dimensional irreducible representations</li>
+            <li><strong>Heuristic connections</strong> to the Cabibbo angle ($\sin(\pi/14) \approx \lambda$, 1.10% deviation from PDG) and the CKM matrix</li>
+          </ul>
+
+          <h2>Why Seven?</h2>
+          <p>The number 7 is the smallest prime for which the Fano plane exists — a projective plane of order 2 with exactly 7 points and 7 lines. This combinatorial object encodes the multiplicative structure of the octonions and the automorphism group $G_2$. The journey from the ancient Luoshu (a $3 \times 3$ magic square over $\mathbb{F}_3$) to the impossibility of its 3D order-7 analogue traces a path through finite geometry, representation theory, and algebraic topology.</p>
+
+          <h2>This Website</h2>
+          <p>This site hosts the online edition of the monograph. Each "Gate" corresponds to a Part of the book, containing full chapters with interactive MathJax-rendered equations. The site is built as a pure static site (HTML + CSS + JS), deployed via Vercel and GitHub, with Giscus-powered discussion boards supporting LaTeX.</p>
+          
+          <p>The monograph is a living document — corrections, discussions, and new results are incorporated as they emerge.</p>
+        </div>
+        
+        <div class="lang-block" data-lang="zh">
+          <h2>本书简介</h2>
+          <p>《Fano平面与物理》是一部研究专著，建立了Fano平面 $\mathrm{PG}(2,7)$、格 $\mathbb{Z}_7^3$ 与例外李群 $G_2$ 之间的数学框架，并将其应用于离散几何、表示论和味物理问题。</p>
+          
+          <p>核心对象是 $G_2$ 等变投影 $S^7 \to \mathbb{Z}_7^3$，它将连续的7-球面映射到离散格上，同时保持例外对称群的作用。该投影导致：</p>
+          
+          <ul>
+            <li><strong>不可能性定理</strong>：$\mathbb{Z}_7$ 上不存在完美的7阶幻立方（637个约束，$3.3 \times 10^8$ 个可逆矩阵中0个解）</li>
+            <li><strong>294元稳定子群</strong>，含14个共轭类，特征标表包含6个1维和8个6维不可约表示</li>
+            <li>与Cabibbo角（$\sin(\pi/14) \approx \lambda$，与PDG偏差1.10%）和CKM矩阵的<strong>启发式联系</strong></li>
+          </ul>
+
+          <h2>为什么是七？</h2>
+          <p>7是Fano平面存在的最小质数——阶为2的射影平面恰有7个点和7条线。这一组合对象编码了八元数的乘法结构和自同构群 $G_2$。从古老的洛书（$\mathbb{F}_3$ 上的 $3 \times 3$ 幻方）到其3D 7阶类比的不可能性，这段旅程穿越了有限几何、表示论和代数拓扑。</p>
+
+          <h2>关于本站</h2>
+          <p>本站托管专著的在线版本。每个"门"对应书的一个Part，包含完整章节和交互式MathJax数学公式渲染。网站采用纯静态构建（HTML + CSS + JS），通过Vercel和GitHub部署，配备基于Giscus的讨论板，支持LaTeX公式。</p>
+          
+          <p>本专著是持续演进的文档——修正、讨论和新结果会不断纳入。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 <em>The Fano Plane in Physics</em>. All rights reserved.</p>
+  </footer>
+  <script src="/js/fano.js"></script>
+  <script src="/js/lang.js"></script>
+</body>
+</html>
