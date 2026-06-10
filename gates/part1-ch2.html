@@ -28,43 +28,17 @@
     </header>
 
     <section class="chapter-content">
-<p>\chapter{Impossibility Theorem: Linear Construction of Perfect Magic Cubes of Order 7}</p>
+<p></p>
 
 <h2>Linear Constructions over $\mathbb{F}_7$</h2>
 
-<p>A <em>linear construction</em> of an order-$7$ magic cube is defined as follows. Let $\mathbb{F}_7 = \{0,1,2,3,4,5,6\}$ denote the finite field of order $7$, and let $\Phi:\mathbb{F}_7^3 \to \mathbb{F}_7$ be a linear functional of the form</p>
-
-$$
-\Phi(x,y,z) \;=\; a x + b y + c z + d \pmod{7},
-
-$$
-
-<p>where $(a,b,c) \in \mathbb{F}_7^3 \setminus \{0\}$. For each position $(i,j,k) \in \{0,1,\dots,6\}^3$ in the $7\times7\times7$ array, the entry $m_{i,j,k}$ is obtained by the base-$7$ weighted expansion</p>
-
-$$
-m_{i,j,k} \;=\; 1 + f_1(i,j,k) + 7\,f_2(i,j,k) + 49\,f_3(i,j,k),
-
-$$
-
-<p>where</p>
-
-$$
-\\begin{aligned}
-f_1(i,j,k) &= \bigl(a_{11}i + a_{12}j + a_{13}k + b_1\bigr)\bmod 7, \\
-f_2(i,j,k) &= \bigl(a_{21}i + a_{22}j + a_{23}k + b_2\bigr)\bmod 7, \\
-f_3(i,j,k) &= \bigl(a_{31}i + a_{32}j + a_{33}k + b_3\bigr)\bmod 7. 
-\\end{aligned}
-$$
-
-<p>Equivalently, writing $\mathbf{A} = (a_{st})\in \mathrm{GL}(3,\mathbb{F}_7)$ and $\mathbf{b} = (b_1,b_2,b_3)^{\!\top}\in\mathbb{F}_7^3$, the construction takes the affine form \[ (m_{i,j,k}) = \varphi\bigl(\mathbf{A}(i,j,k)^{\!\top} + \mathbf{b}\bigr), \] where $\varphi:\mathbb{F}_7^3 \to \{1,2,\dots,343\}$ is the base-$7$ decoding map $\varphi(x,y,z)=1+x+7y+49z$.</p>
+<p>A <em>linear construction</em> of an order-$7$ magic cube is defined as follows. Let $\mathbb{F}_7 = \{0,1,2,3,4,5,6\}$ denote the finite field of order $7$, and let $\Phi:\mathbb{F}_7^3 \to \mathbb{F}_7$ be a linear functional of the form$$\Phi(x,y,z) \;=\; a x + b y + c z + d \pmod{7},$$where $(a,b,c) \in \mathbb{F}_7^3 \setminus \{0\}$. For each position $(i,j,k) \in \{0,1,\dots,6\}^3$ in the $7\times7\times7$ array, the entry $m_{i,j,k}$ is obtained by the base-$7$ weighted expansion$$m_{i,j,k} \;=\; 1 + f_1(i,j,k) + 7\,f_2(i,j,k) + 49\,f_3(i,j,k),$$where$$\begin{aligned} f_1(i,j,k) &= \bigl(a_{11}i + a_{12}j + a_{13}k + b_1\bigr)\bmod 7, \\ f_2(i,j,k) &= \bigl(a_{21}i + a_{22}j + a_{23}k + b_2\bigr)\bmod 7, \\ f_3(i,j,k) &= \bigl(a_{31}i + a_{32}j + a_{33}k + b_3\bigr)\bmod 7. \end{aligned}$$Equivalently, writing $\mathbf{A} = (a_{st})\in \mathrm{GL}(3,\mathbb{F}_7)$ and $\mathbf{b} = (b_1,b_2,b_3)^{\!\top}\in\mathbb{F}_7^3$, the construction takes the affine form $$(m_{i,j,k}) = \varphi\bigl(\mathbf{A}(i,j,k)^{\!\top} + \mathbf{b}\bigr),$$ where $\varphi:\mathbb{F}_7^3 \to \{1,2,\dots,343\}$ is the base-$7$ decoding map $\varphi(x,y,z)=1+x+7y+49z$.</p>
 
 <div class="definition-block">
 <span class="definition-label">Definition</span>
-<p>A magic cube is <em>perfect</em> (also called <em>Nasik</em>) if all lines parallel to any of the three coordinate axes, all face diagonals of each $7\times7$ layer, and all space diagonals of the $7\times7\times7$ cube, sum to the magic constant
-\[
-M_3(7)=\frac{7\,(7^3+1)}{2}=1197.
-\]
-A magic cube is <em>semi-perfect</em> (also called <em>Andrews</em>) if only the axial parallel lines satisfy the sum condition.</p>
+A magic cube is <em>perfect</em> (also called <em>Nasik</em>) if all lines parallel to any of the three coordinate axes, all face diagonals of each $7\times7$ layer, and all space diagonals of the $7\times7\times7$ cube, sum to the magic constant
+$$M_3(7)=\frac{7\,(7^3+1)}{2}=1197.$$
+A magic cube is <em>semi-perfect</em> (also called <em>Andrews</em>) if only the axial parallel lines satisfy the sum condition.
 </div>
 
 <p>The constraint system for a perfect order-$7$ magic cube consists of three disjoint families:</p>
@@ -75,14 +49,7 @@ A magic cube is <em>semi-perfect</em> (also called <em>Andrews</em>) if only the
 <li><strong>Space diagonals (pan-diagonals).</strong> There are $4\cdot 7^2 = 196$ space-diagonal lines.
 </ol>
 
-<p>Thus a perfect order-$7$ magic cube must satisfy a total of</p>
-
-$$
-147 + 294 + 196 = 637
-
-$$
-
-<p>independent linear constraints.</p>
+<p>Thus a perfect order-$7$ magic cube must satisfy a total of$$147 + 294 + 196 = 637$$independent linear constraints.</p>
 
 <h2>The Rank Deficiency Argument</h2>
 
@@ -90,24 +57,23 @@ $$
 
 <div class="theorem-block">
 <span class="theorem-label">Theorem (Impossibility Theorem)</span>
-<p>
-There exists no linear construction $\Phi:\mathbb{F}_7^3 \to \mathbb{F}_7$ of the form \eqref{eq:linear-functional} that satisfies simultaneously all $637$ constraints of a perfect order-$7$ magic cube.</p>
-</div>
+
+<p>There exists no linear construction $\Phi:\mathbb{F}_7^3 \to \mathbb{F}_7$ of the form \eqref{eq:linear-functional} that satisfies simultaneously all $637$ constraints of a perfect order-$7$ magic cube. </div></p>
 
 <details class="proof-block"><summary>Proof / 证明</summary>
-<div class="proof-content"><p>The construction \eqref{eq:magic-cube-linear} depends on the $3\times3$ invertible matrix $\mathbf{A}$ and the translation vector $\mathbf{b}$, for a total of $9+3=12$ free parameters. The magic-cube constraints are linear equations over $\mathbb{F}_7$ in these parameters.
+<div class="proof-content">The construction \eqref{eq:magic-cube-linear} depends on the $3\times3$ invertible matrix $\mathbf{A}$ and the translation vector $\mathbf{b}$, for a total of $9+3=12$ free parameters. The magic-cube constraints are linear equations over $\mathbb{F}_7$ in these parameters.
 
-<p>Write $L_\ell(m_{i_t,j_t,k_t})=0$ for the $\ell$-th constraint equation, where the index $\ell$ runs over the $637$ lines described above. Substituting \eqref{eq:magic-cube-linear} and separating the three base-$7$ digits yields, for each line $\ell$, three independent constraint equations: \[ \sum_{t=0}^{6} f_s(i_t,j_t,k_t) \equiv \alpha_s^{(\ell)} \pmod{7}, \qquad s\in\{1,2,3\}, \] where $\alpha_s^{(\ell)}\in\mathbb{F}_7$ are constants determined by the decomposition of $1197$ in base $7$.</p>
+<p>Write $L_\ell(m_{i_t,j_t,k_t})=0$ for the $\ell$-th constraint equation, where the index $\ell$ runs over the $637$ lines described above. Substituting \eqref{eq:magic-cube-linear} and separating the three base-$7$ digits yields, for each line $\ell$, three independent constraint equations: $$\sum_{t=0}^{6} f_s(i_t,j_t,k_t) \equiv \alpha_s^{(\ell)} \pmod{7}, \qquad s\in\{1,2,3\},$$ where $\alpha_s^{(\ell)}\in\mathbb{F}_7$ are constants determined by the decomposition of $1197$ in base $7$.</p>
 
-<p>Hence the full system consists of $3\times 637=1911$ scalar equations in the $12$ unknown parameters of the construction. Consider the $1911\times 12$ constraint matrix $\mathbf{C}$ whose rows encode the coefficients of each scalar equation. By direct computation over $\mathbb{F}_7$ (using Gaussian elimination on the full set of $1911$ rows), one finds \[ \operatorname{rank}(\mathbf{C}) = 12. \] Since the rank cannot exceed the number of columns, $\operatorname{rank}(\mathbf{C})\leq 12$, we have $\operatorname{rank}(\mathbf{C})=12$. The constraint system therefore contains $1911$ rows but its rank is only $12$; in particular, there are far more than $12$ linearly independent equations.</p>
+<p>Hence the full system consists of $3\times 637=1911$ scalar equations in the $12$ unknown parameters of the construction. Consider the $1911\times 12$ constraint matrix $\mathbf{C}$ whose rows encode the coefficients of each scalar equation. By direct computation over $\mathbb{F}_7$ (using Gaussian elimination on the full set of $1911$ rows), one finds $$\operatorname{rank}(\mathbf{C}) = 12.$$ Since the rank cannot exceed the number of columns, $\operatorname{rank}(\mathbf{C})\leq 12$, we have $\operatorname{rank}(\mathbf{C})=12$. The constraint system therefore contains $1911$ rows but its rank is only $12$; in particular, there are far more than $12$ linearly independent equations.</p>
 
 <p>To see that the equations are indeed independent beyond rank $12$, note that the axial constraint subsystem alone already has rank $12$. Indeed, the $147$ axial lines give rise to $3\times 147=441$ scalar equations; the coefficient matrix of this subsystem has rank $12$ because the nine entries of $\mathbf{A}$ and the three components of $\mathbf{b}$ are each determined uniquely, up to the overall scaling ambiguity inherent in the definition of the linear functional, by requiring that all axial sums equal $M_3(7)$.</p>
 
-<p>Consequently, any additional constraints (face diagonals or space diagonals) must be linearly independent of the axial subsystem. Since the full system has rank $12$ and the axial subsystem already saturates the rank, there is no solution to the complete set of $637$ constraints. ∎</p></div> </details></p>
+<p>Consequently, any additional constraints (face diagonals or space diagonals) must be linearly independent of the axial subsystem. Since the full system has rank $12$ and the axial subsystem already saturates the rank, there is no solution to the complete set of $637$ constraints. ∎</div> </details></p>
 
 <div class="remark-block">
 <span class="remark-label">Remarks</span>
-<p>The argument can be restated without computing the full $1911\times12$ matrix. The space of linear functionals $\Phi$ of the form \eqref{eq:linear-functional} has dimension $12$ over $\mathbb{F}_7$. Each line $\ell$ imposes one linear condition on $\Phi$, namely $\sum_{t=0}^6 \Phi(i_t,j_t,k_t)\equiv M_3(7)$. If $637$ such conditions were simultaneously satisfiable, the set of all $\Phi$ satisfying them would form an affine subspace of codimension at most $637$ in the $12$-dimensional space. Since codimension cannot exceed dimension, this is impossible. The quantitative refinement in the proof above shows that the rank of the full constraint system is already $12$ at the level of the axial constraints alone.</p>
+The argument can be restated without computing the full $1911\times12$ matrix. The space of linear functionals $\Phi$ of the form \eqref{eq:linear-functional} has dimension $12$ over $\mathbb{F}_7$. Each line $\ell$ imposes one linear condition on $\Phi$, namely $\sum_{t=0}^6 \Phi(i_t,j_t,k_t)\equiv M_3(7)$. If $637$ such conditions were simultaneously satisfiable, the set of all $\Phi$ satisfying them would form an affine subspace of codimension at most $637$ in the $12$-dimensional space. Since codimension cannot exceed dimension, this is impossible. The quantitative refinement in the proof above shows that the rank of the full constraint system is already $12$ at the level of the axial constraints alone.
 </div>
 
 <h2>Trenkler's Construction and the Semi-Perfect Bound</h2>
@@ -118,38 +84,33 @@ There exists no linear construction $\Phi:\mathbb{F}_7^3 \to \mathbb{F}_7$ of th
 
 <div class="remark-block">
 <span class="remark-label">Observation</span>
-<p>Every Trenkler construction satisfies all $147$ axial parallel-line constraints.</p>
+Every Trenkler construction satisfies all $147$ axial parallel-line constraints.
 </div>
 
 <details class="proof-block"><summary>Proof / 证明</summary>
-<div class="proof-content"><p>Fix any line parallel to the $x$-axis, say $\{(i,j_0,k_0):i\in\mathbb{F}_7\}$ for fixed $j_0,k_0$. Over $\mathbb{F}_7$ we have $\sum_{i=0}^6 i \equiv 0$. Since each $f_s$ is linear in $i$, it follows that
-\[
-\sum_{i=0}^6 f_s(i,j_0,k_0) \equiv 7\,b_s \equiv 0 \pmod{7}.
-\]
-The same argument applies to lines parallel to the $y$- and $z$-axes. Hence all axial sums equal $1+7\cdot0+49\cdot0=1$, which is not the required constant; however, the constant term in \eqref{eq:magic-cube-linear} is $1$, and the contributions from $f_2$ and $f_3$ vanish modulo $7$ and $49$ respectively on any complete residue system. The reader verifies that the resulting sum is exactly $M_3(7)=1197$.  ∎</p></div>
+<div class="proof-content">Fix any line parallel to the $x$-axis, say $\{(i,j_0,k_0):i\in\mathbb{F}_7\}$ for fixed $j_0,k_0$. Over $\mathbb{F}_7$ we have $\sum_{i=0}^6 i \equiv 0$. Since each $f_s$ is linear in $i$, it follows that
+$$\sum_{i=0}^6 f_s(i,j_0,k_0) \equiv 7\,b_s \equiv 0 \pmod{7}.$$
+The same argument applies to lines parallel to the $y$- and $z$-axes. Hence all axial sums equal $1+7\cdot0+49\cdot0=1$, which is not the required constant; however, the constant term in \eqref{eq:magic-cube-linear} is $1$, and the contributions from $f_2$ and $f_3$ vanish modulo $7$ and $49$ respectively on any complete residue system. The reader verifies that the resulting sum is exactly $M_3(7)=1197$.  ∎</div>
 </details>
 
 <div class="remark-block">
 <span class="remark-label">Observation</span>
-<p>No Trenkler construction satisfies all $294$ face-diagonal constraints, and no such construction satisfies any space-diagonal constraint.</p>
+No Trenkler construction satisfies all $294$ face-diagonal constraints, and no such construction satisfies any space-diagonal constraint.
 </div>
 
 <details class="proof-block"><summary>Proof / 证明</summary>
-<div class="proof-content"><p>Consider a face-diagonal line in the $xy$-plane at fixed $z=z_0$, parametrized by $(i,i,z_0)$ for $i\in\mathbb{F}_7$. The corresponding sum is
-\[
-\sum_{i=0}^6 m_{i,i,z_0} = \sum_{i=0}^6\bigl[1+f_1(i,i,z_0)+7f_2(i,i,z_0)+49f_3(i,i,z_0)\bigr].
-\]
+<div class="proof-content">Consider a face-diagonal line in the $xy$-plane at fixed $z=z_0$, parametrized by $(i,i,z_0)$ for $i\in\mathbb{F}_7$. The corresponding sum is
+$$\sum_{i=0}^6 m_{i,i,z_0} = \sum_{i=0}^6\bigl[1+f_1(i,i,z_0)+7f_2(i,i,z_0)+49f_3(i,i,z_0)\bigr].$$
 The linear forms $f_s(i,i,z_0)$ are again linear in $i$, but they involve the mixed term $a_{1s}i$. Summing over the complete residue system does not annihilate these mixed terms; one obtains a non-zero contribution proportional to $\sum_{i=0}^6 i^2$, which equals $0$ in $\mathbb{F}_7$ only when the mixed coefficient vanishes. The constraint for face diagonals therefore imposes a non-trivial linear condition on $\mathbf{A}$ that is not implied by the axial constraints alone. A similar analysis for space-diagonal lines $(i,i,i)$ shows that the condition $\sum_i m_{i,i,i}=1197$ is independent of both the axial and the face-diagonal constraints.
 
-<p>Since the axial subsystem already saturates the rank (Theorem §), no further independent condition can be satisfied. ∎</p></div> </details></p>
+<p>Since the axial subsystem already saturates the rank (Theorem §), no further independent condition can be satisfied. ∎</div> </details></p>
 
 <p>Consequently, the optimal symmetric level attainable by any linear construction over $\mathbb{F}_7$ is exactly the semi-perfect (Andrews) level. We record this as a corollary.</p>
 
 <div class="theorem-block">
 <span class="theorem-label">Corollary</span>
-<p>
-Every linear construction over $\mathbb{F}_7$ that satisfies the axial constraints is a semi-perfect magic cube, and no such construction can satisfy any additional face-diagonal or space-diagonal constraint.</p>
-</div>
+
+<p>Every linear construction over $\mathbb{F}_7$ that satisfies the axial constraints is a semi-perfect magic cube, and no such construction can satisfy any additional face-diagonal or space-diagonal constraint. </div></p>
 
 <h2>Exhaustive Enumeration</h2>
 
@@ -157,7 +118,7 @@ Every linear construction over $\mathbb{F}_7$ that satisfies the axial constrain
 
 <h3>Enumeration strategy</h3>
 
-<p>The set of all affine linear constructions is parametrized by $(\mathbf{A},\mathbf{b})\in\mathrm{GL}(3,\mathbb{F}_7)\times\mathbb{F}_7^3$. The group $\mathrm{GL}(3,\mathbb{F}_7)$ has order \[ |\mathrm{GL}(3,\mathbb{F}_7)| = (7^3-1)(7^3-7)(7^3-7^2) = 3307080, \] so the full matrix space contains $3307080$ elements. For each matrix, the translation vector $\mathbf{b}$ can be absorbed by a reparametrisation that does not affect any constraint, so the essential enumeration concerns the $3307080$ matrices in $\mathrm{GL}(3,\mathbb{F}_7)$. A naive enumeration of these matrices is computationally feasible; however, a further reduction exploits the symmetry group of the cube.</p>
+<p>The set of all affine linear constructions is parametrized by $(\mathbf{A},\mathbf{b})\in\mathrm{GL}(3,\mathbb{F}_7)\times\mathbb{F}_7^3$. The group $\mathrm{GL}(3,\mathbb{F}_7)$ has order $$|\mathrm{GL}(3,\mathbb{F}_7)| = (7^3-1)(7^3-7)(7^3-7^2) = 3307080,$$ so the full matrix space contains $3307080$ elements. For each matrix, the translation vector $\mathbf{b}$ can be absorbed by a reparametrisation that does not affect any constraint, so the essential enumeration concerns the $3307080$ matrices in $\mathrm{GL}(3,\mathbb{F}_7)$. A naive enumeration of these matrices is computationally feasible; however, a further reduction exploits the symmetry group of the cube.</p>
 
 <p>Two matrices $\mathbf{A},\mathbf{A}'\in\mathrm{GL}(3,\mathbb{F}_7)$ are <em>equivalent</em> if there exists a symmetry of the cube---an element of the octahedral group $S_3\times(\mathbb{F}_7^\times)^3$---that transforms one construction into the other without altering any magic-cube sum. The canonical representative of each equivalence class was chosen as the lexicographically smallest matrix in its orbit under this group action. This reduces the enumeration by a factor of $48$ (the order of the rotational symmetry group of the cube), yielding approximately $6.89\times10^4$ representatives.</p>
 
@@ -184,25 +145,21 @@ Every linear construction over $\mathbb{F}_7$ that satisfies the axial constrain
 
 <div class="theorem-block">
 <span class="theorem-label">Theorem (Combinatorial Duality)</span>
-<p>
-The set $\Phi_s$ of semi-perfect linear construction equivalence classes is in bijective correspondence with the set of $G_2$-equivariant projection-lattice orbit types in $\mathbb{F}_7^3$. The bijection preserves the axial symmetry structure: for each class $[\mathbf{A}]\in\Phi_s$, the stabilizer of the corresponding projection lattice in the axial translation group $(\mathbb{Z}_7)^3$ has order $7^3$, and this is the only structural invariant distinguishing the classes.</p>
-</div>
+
+<p>The set $\Phi_s$ of semi-perfect linear construction equivalence classes is in bijective correspondence with the set of $G_2$-equivariant projection-lattice orbit types in $\mathbb{F}_7^3$. The bijection preserves the axial symmetry structure: for each class $[\mathbf{A}]\in\Phi_s$, the stabilizer of the corresponding projection lattice in the axial translation group $(\mathbb{Z}_7)^3$ has order $7^3$, and this is the only structural invariant distinguishing the classes. </div></p>
 
 <details class="proof-block"><summary>Proof / 证明</summary>
-<div class="proof-content"><p>Given a semi-perfect construction determined by $\mathbf{A}\in\mathrm{GL}(3,\mathbb{F}_7)$, define the projection lattice
-\[
-\mathcal{L}_{\mathbf{A}} \;=\; \bigl\{\, \mathbf{A}\mathbf{x} \bmod 7 : \mathbf{x}\in\mathbb{F}_7^3 \,\bigr\}
-\;=\; \mathbb{F}_7^3,
-\]
+<div class="proof-content">Given a semi-perfect construction determined by $\mathbf{A}\in\mathrm{GL}(3,\mathbb{F}_7)$, define the projection lattice
+$$\mathcal{L}_{\mathbf{A}} \;=\; \bigl\{\, \mathbf{A}\mathbf{x} \bmod 7 : \mathbf{x}\in\mathbb{F}_7^3 \,\bigr\} \;=\; \mathbb{F}_7^3,$$
 together with the weight map $w:\mathcal{L}_{\mathbf{A}}\to\{1,\dots,343\}$ induced by the base-$7$ expansion \eqref{eq:magic-cube-linear}. The axial translation group $(\mathbb{Z}_7)^3$ acts on $\mathcal{L}_{\mathbf{A}}$ by simultaneous coordinate addition; the orbits of this action are exactly the $343$ one-element fibers of $w$, each of size $1$, corresponding to the $343$ distinct entries of the semi-perfect magic cube. This shows that $\mathcal{L}_{\mathbf{A}}$ carries precisely the combinatorial structure of the associated semi-perfect magic cube.
 
 <p>Conversely, starting from a $G_2$-equivariant projection lattice $\mathcal{L}$ in $\mathbb{F}_7^3$, the $G_2$-equivariance condition forces the projection map to be $\mathbb{F}_7$-linear. The lattice orbits under $(\mathbb{Z}_7)^3$ partition $\mathcal{L}$ into $343$ orbits, each of size $7$; assigning to each orbit the base-$7$ digit of its position yields a semi-perfect magic cube. The $G_2$-equivariance ensures that the resulting cube satisfies all axial constraints.</p>
 
-<p>It remains to verify that distinct $G_2$-equivariant projection lattices give non-equivalent semi-perfect cubes. Two constructions $\mathbf{A},\mathbf{A}'$ yield the same combinatorial structure if and only if there exists $g\in S_3\times(\mathbb{F}_7^\times)^3$ with $\mathbf{A}' = g\cdot\mathbf{A}$. The $G_2$-equivariance condition is preserved precisely under this group action, so the correspondence descends to a bijection of the quotients. ∎</p></div> </details></p>
+<p>It remains to verify that distinct $G_2$-equivariant projection lattices give non-equivalent semi-perfect cubes. Two constructions $\mathbf{A},\mathbf{A}'$ yield the same combinatorial structure if and only if there exists $g\in S_3\times(\mathbb{F}_7^\times)^3$ with $\mathbf{A}' = g\cdot\mathbf{A}$. The $G_2$-equivariance condition is preserved precisely under this group action, so the correspondence descends to a bijection of the quotients. ∎</div> </details></p>
 
 <div class="theorem-block">
 <span class="theorem-label">Corollary</span>
-<p>The $G_2$-equivariant projection lattice associated with any semi-perfect construction admits only axial symmetry. In particular, it does not admit any face-diagonal or space-diagonal symmetry plane. Consequently, no such lattice can be the combinatorial dual of a perfect magic cube.</p>
+The $G_2$-equivariant projection lattice associated with any semi-perfect construction admits only axial symmetry. In particular, it does not admit any face-diagonal or space-diagonal symmetry plane. Consequently, no such lattice can be the combinatorial dual of a perfect magic cube.
 </div>
 
 <h2>Summary</h2>
