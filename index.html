@@ -56,11 +56,8 @@
     <section class="hero">
       <div class="hero-fano">
         <svg viewBox="0 0 200 200" class="fano-interactive" id="fanoMain">
-          <!-- Standard Fano Plane: 7 points, 7 lines -->
-          <!-- Triangle vertices: P1(top), P2(bottom-left), P3(bottom-right) -->
-          <!-- Edge midpoints: P4(mid-left), P5(mid-right), P6(bottom-mid) -->
-          <!-- Center: P7 (intersection of all 3 medians) -->
-          <!-- 7 Lines: 3 edges + 3 medians + 1 inscribed circle through midpoints -->
+          <!-- Standard Fano Plane: 7 points, 7 lines (3 edges + 3 medians + 1 circle) -->
+          <!-- P1(100,25) P2(34,155) P3(166,155) P4(67,90) P5(133,90) P6(100,155) P7(100,112) -->
 
           <!-- Line 1: P1—P4—P2 (left edge) -->
           <line class="fano-line" x1="100" y1="25" x2="34" y2="155" data-line="1"/>
@@ -68,29 +65,22 @@
           <line class="fano-line" x1="100" y1="25" x2="166" y2="155" data-line="2"/>
           <!-- Line 3: P2—P6—P3 (bottom edge) -->
           <line class="fano-line" x1="34" y1="155" x2="166" y2="155" data-line="3"/>
-          <!-- Line 4: P1—P7—P6 (median from top to bottom-mid) -->
+          <!-- Line 4: P1—P7—P6 (vertical median) -->
           <line class="fano-line" x1="100" y1="25" x2="100" y2="155" data-line="4"/>
-          <!-- Line 5: P2—P7—P5 (median from bottom-left to mid-right) -->
-          <line class="fano-line" x1="34" y1="155" x2="166" y2="90" data-line="5"/>
-          <!-- Line 6: P3—P7—P4 (median from bottom-right to mid-left) -->
-          <line class="fano-line" x1="166" y1="155" x2="34" y2="90" data-line="6"/>
-          <!-- Line 7: P4—P5—P6 (the inscribed circle through the 3 midpoints) -->
-          <circle class="fano-line" cx="100" cy="112" r="51" fill="none" data-line="7"/>
+          <!-- Line 5: P2—P7—P5 (median bottom-left → right-mid) -->
+          <line class="fano-line" x1="34" y1="155" x2="133" y2="90" data-line="5"/>
+          <!-- Line 6: P3—P7—P4 (median bottom-right → left-mid) -->
+          <line class="fano-line" x1="166" y1="155" x2="67" y2="90" data-line="6"/>
+          <!-- Line 7: P4—P5—P6 (circle through 3 midpoints) -->
+          <circle class="fano-line" cx="100" cy="114" r="41" fill="none" data-line="7"/>
 
           <!-- 7 Vertices -->
-          <!-- P1: top vertex -->
           <circle class="fano-vertex" cx="100" cy="25" r="7" data-gate="1" data-label="I"/>
-          <!-- P2: bottom-left vertex -->
           <circle class="fano-vertex" cx="34" cy="155" r="7" data-gate="2" data-label="II"/>
-          <!-- P3: bottom-right vertex -->
           <circle class="fano-vertex" cx="166" cy="155" r="7" data-gate="3" data-label="III"/>
-          <!-- P4: midpoint of left edge -->
           <circle class="fano-vertex" cx="67" cy="90" r="6" data-gate="4" data-label="IV"/>
-          <!-- P5: midpoint of right edge -->
           <circle class="fano-vertex" cx="133" cy="90" r="6" data-gate="5" data-label="V"/>
-          <!-- P6: midpoint of bottom edge -->
           <circle class="fano-vertex" cx="100" cy="155" r="6" data-gate="0" data-label="●" data-center="true"/>
-          <!-- P7: center (intersection of medians) -->
           <circle class="fano-vertex" cx="100" cy="112" r="6" data-gate="0" data-label="●" data-center="true"/>
         </svg>
       </div>
