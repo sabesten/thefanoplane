@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140" width="300" height="140">
+  <!-- Layer 1: Axial -->
+  <rect x="10" y="10" width="80" height="120" rx="6" fill="#7c6ff7" opacity="0.15" stroke="#7c6ff7" stroke-width="1"/>
+  <text x="50" y="40" text-anchor="middle" fill="#7c6ff7" font-size="14" font-weight="bold" font-family="sans-serif">147</text>
+  <text x="50" y="58" text-anchor="middle" fill="#6b6890" font-size="10" font-family="sans-serif">Axial</text>
+  <!-- Layer 2: Face-diagonal -->
+  <rect x="110" y="10" width="80" height="120" rx="6" fill="#5ba8f7" opacity="0.15" stroke="#5ba8f7" stroke-width="1"/>
+  <text x="150" y="40" text-anchor="middle" fill="#5ba8f7" font-size="14" font-weight="bold" font-family="sans-serif">294</text>
+  <text x="150" y="58" text-anchor="middle" fill="#6b6890" font-size="10" font-family="sans-serif">Face-diag</text>
+  <!-- Layer 3: Body-diagonal -->
+  <rect x="210" y="10" width="80" height="120" rx="6" fill="#f77c6f" opacity="0.15" stroke="#f77c6f" stroke-width="1"/>
+  <text x="250" y="40" text-anchor="middle" fill="#f77c6f" font-size="14" font-weight="bold" font-family="sans-serif">196</text>
+  <text x="250" y="58" text-anchor="middle" fill="#6b6890" font-size="10" font-family="sans-serif">Body-diag</text>
+  <!-- Plus signs -->
+  <text x="95" y="40" text-anchor="middle" fill="#6b6890" font-size="18" font-family="sans-serif">+</text>
+  <text x="195" y="40" text-anchor="middle" fill="#6b6890" font-size="18" font-family="sans-serif">+</text>
+  <!-- Total -->
+  <text x="150" y="100" text-anchor="middle" fill="#e8e6f0" font-size="20" font-weight="bold" font-family="serif">= 637</text>
+  <text x="150" y="118" text-anchor="middle" fill="#6b6890" font-size="10" font-family="sans-serif">Total constraints</text>
+</svg>
