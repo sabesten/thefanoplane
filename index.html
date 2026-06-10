@@ -23,19 +23,21 @@
   <nav class="nav">
     <div class="nav-brand">
       <svg class="nav-logo" viewBox="0 0 100 100" width="32" height="32">
-        <circle cx="50" cy="17" r="4" fill="var(--accent)"/>
-        <circle cx="83" cy="37" r="4" fill="var(--accent)"/>
-        <circle cx="71" cy="76" r="4" fill="var(--accent)"/>
-        <circle cx="29" cy="76" r="4" fill="var(--accent)"/>
-        <circle cx="17" cy="37" r="4" fill="var(--accent)"/>
-        <circle cx="50" cy="50" r="4" fill="var(--accent-dim)"/>
-        <line x1="50" y1="17" x2="71" y2="76" stroke="var(--line)" stroke-width="1.5"/>
-        <line x1="50" y1="17" x2="29" y2="76" stroke="var(--line)" stroke-width="1.5"/>
-        <line x1="83" y1="37" x2="29" y2="76" stroke="var(--line)" stroke-width="1.5"/>
-        <line x1="83" y1="37" x2="17" y2="37" stroke="var(--line)" stroke-width="1.5"/>
-        <line x1="17" y1="37" x2="71" y2="76" stroke="var(--line)" stroke-width="1.5"/>
-        <line x1="29" y1="76" x2="83" y2="76" stroke="var(--line)" stroke-width="1.5"/>
-        <circle cx="50" cy="17" r="3" fill="var(--accent)"/>
+        <!-- Fano plane mini: 7 lines + 7 points -->
+        <line x1="50" y1="12" x2="17" y2="78" stroke="var(--line)" stroke-width="1.5"/>
+        <line x1="50" y1="12" x2="83" y2="78" stroke="var(--line)" stroke-width="1.5"/>
+        <line x1="17" y1="78" x2="83" y2="78" stroke="var(--line)" stroke-width="1.5"/>
+        <line x1="50" y1="12" x2="50" y2="78" stroke="var(--line)" stroke-width="1.5"/>
+        <line x1="17" y1="78" x2="83" y2="45" stroke="var(--line)" stroke-width="1.5"/>
+        <line x1="83" y1="78" x2="17" y2="45" stroke="var(--line)" stroke-width="1.5"/>
+        <circle cx="50" cy="56" r="22" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+        <circle cx="50" cy="12" r="3" fill="var(--accent)"/>
+        <circle cx="17" cy="78" r="3" fill="var(--accent)"/>
+        <circle cx="83" cy="78" r="3" fill="var(--accent)"/>
+        <circle cx="34" cy="45" r="3" fill="var(--accent)"/>
+        <circle cx="66" cy="45" r="3" fill="var(--accent)"/>
+        <circle cx="50" cy="78" r="3" fill="var(--accent)"/>
+        <circle cx="50" cy="56" r="3" fill="var(--accent-dim)"/>
       </svg>
       <span class="nav-title">The Fano Plane</span>
     </div>
@@ -54,23 +56,42 @@
     <section class="hero">
       <div class="hero-fano">
         <svg viewBox="0 0 200 200" class="fano-interactive" id="fanoMain">
-          <!-- Lines -->
-          <line class="fano-line" x1="100" y1="30" x2="142" y2="155" data-line="1"/>
-          <line class="fano-line" x1="100" y1="30" x2="58" y2="155" data-line="2"/>
-          <line class="fano-line" x1="166" y1="75" x2="58" y2="155" data-line="3"/>
-          <line class="fano-line" x1="166" y1="75" x2="34" y2="75" data-line="4"/>
-          <line class="fano-line" x1="34" y1="75" x2="142" y2="155" data-line="5"/>
-          <line class="fano-line" x1="58" y1="155" x2="142" y2="155" data-line="6"/>
-          <line class="fano-line fano-circle" data-line="7"/>
-          <!-- Vertices -->
-          <circle class="fano-vertex" cx="100" cy="30" r="6" data-gate="1" data-label="I"/>
-          <circle class="fano-vertex" cx="166" cy="75" r="6" data-gate="2" data-label="II"/>
-          <circle class="fano-vertex" cx="142" cy="155" r="6" data-gate="3" data-label="III"/>
-          <circle class="fano-vertex" cx="58" cy="155" r="6" data-gate="4" data-label="IV"/>
-          <circle class="fano-vertex" cx="34" cy="75" r="6" data-gate="5" data-label="V"/>
-          <circle class="fano-vertex" cx="100" cy="100" r="5" data-gate="0" data-label="●" data-center="true"/>
-          <circle class="fano-vertex" cx="58" cy="70" r="4" data-gate="6" data-label="VI" data-invisible="true" opacity="0"/>
-          <circle class="fano-vertex" cx="142" cy="70" r="4" data-gate="7" data-label="VII" data-invisible="true" opacity="0"/>
+          <!-- Standard Fano Plane: 7 points, 7 lines -->
+          <!-- Triangle vertices: P1(top), P2(bottom-left), P3(bottom-right) -->
+          <!-- Edge midpoints: P4(mid-left), P5(mid-right), P6(bottom-mid) -->
+          <!-- Center: P7 (intersection of all 3 medians) -->
+          <!-- 7 Lines: 3 edges + 3 medians + 1 inscribed circle through midpoints -->
+
+          <!-- Line 1: P1—P4—P2 (left edge) -->
+          <line class="fano-line" x1="100" y1="25" x2="34" y2="155" data-line="1"/>
+          <!-- Line 2: P1—P5—P3 (right edge) -->
+          <line class="fano-line" x1="100" y1="25" x2="166" y2="155" data-line="2"/>
+          <!-- Line 3: P2—P6—P3 (bottom edge) -->
+          <line class="fano-line" x1="34" y1="155" x2="166" y2="155" data-line="3"/>
+          <!-- Line 4: P1—P7—P6 (median from top to bottom-mid) -->
+          <line class="fano-line" x1="100" y1="25" x2="100" y2="155" data-line="4"/>
+          <!-- Line 5: P2—P7—P5 (median from bottom-left to mid-right) -->
+          <line class="fano-line" x1="34" y1="155" x2="166" y2="90" data-line="5"/>
+          <!-- Line 6: P3—P7—P4 (median from bottom-right to mid-left) -->
+          <line class="fano-line" x1="166" y1="155" x2="34" y2="90" data-line="6"/>
+          <!-- Line 7: P4—P5—P6 (the inscribed circle through the 3 midpoints) -->
+          <circle class="fano-line" cx="100" cy="112" r="51" fill="none" data-line="7"/>
+
+          <!-- 7 Vertices -->
+          <!-- P1: top vertex -->
+          <circle class="fano-vertex" cx="100" cy="25" r="7" data-gate="1" data-label="I"/>
+          <!-- P2: bottom-left vertex -->
+          <circle class="fano-vertex" cx="34" cy="155" r="7" data-gate="2" data-label="II"/>
+          <!-- P3: bottom-right vertex -->
+          <circle class="fano-vertex" cx="166" cy="155" r="7" data-gate="3" data-label="III"/>
+          <!-- P4: midpoint of left edge -->
+          <circle class="fano-vertex" cx="67" cy="90" r="6" data-gate="4" data-label="IV"/>
+          <!-- P5: midpoint of right edge -->
+          <circle class="fano-vertex" cx="133" cy="90" r="6" data-gate="5" data-label="V"/>
+          <!-- P6: midpoint of bottom edge -->
+          <circle class="fano-vertex" cx="100" cy="155" r="6" data-gate="0" data-label="●" data-center="true"/>
+          <!-- P7: center (intersection of medians) -->
+          <circle class="fano-vertex" cx="100" cy="112" r="6" data-gate="0" data-label="●" data-center="true"/>
         </svg>
       </div>
       <div class="hero-text">

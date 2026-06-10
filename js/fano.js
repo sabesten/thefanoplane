@@ -14,15 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
     '4': '/gates/part4.html',
   };
 
-  // Line-vertex adjacency for highlighting
+  // Line-vertex adjacency for highlighting (standard Fano plane)
+  // Lines: 1=left edge, 2=right edge, 3=bottom edge, 4=vertical median, 5=median BL→MR, 6=median BR→ML, 7=inscribed circle
   const lineVertexMap = {
-    '1': ['1', '3'],
-    '2': ['1', '4'],
-    '3': ['2', '4'],
-    '4': ['2', '5'],
-    '5': ['3', '5'],
-    '6': ['3', '4'],
-    '7': ['1', '2', '3', '4', '5', '0'],
+    '1': ['1', '2', '4'],      // left edge: P1—P4—P2
+    '2': ['1', '3', '5'],      // right edge: P1—P5—P3
+    '3': ['2', '3', '0'],      // bottom edge: P2—P6—P3 (P6=data-gate 0)
+    '4': ['1', '0', '0'],      // vertical median: P1—P7—P6 (two 0-gate points)
+    '5': ['2', '5', '0'],      // median: P2—P7—P5
+    '6': ['3', '4', '0'],      // median: P3—P7—P4
+    '7': ['4', '5', '0'],      // inscribed circle: P4—P5—P6
   };
 
   vertices.forEach(v => {
