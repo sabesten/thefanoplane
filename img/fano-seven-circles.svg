@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" fill="transparent"/>
+  <!-- 7 points arranged: top, top-left, top-right, left, right, bottom-left, bottom-right -->
+  <!-- Circles (lines of PG(2,2)) -->
+  <!-- Circle 1: through top, bottom-left, bottom-right -->
+  <circle cx="100" cy="110" r="35" fill="none" stroke="#7c6ff7" stroke-width="1.2" opacity="0.6"/>
+  <!-- Circle 2: through top-left, right, bottom-left -->  
+  <circle cx="72" cy="85" r="40" fill="none" stroke="#5ba8f7" stroke-width="1.2" opacity="0.6"/>
+  <!-- Circle 3: through top-right, left, bottom-right -->
+  <circle cx="128" cy="85" r="40" fill="none" stroke="#5ba8f7" stroke-width="1.2" opacity="0.6"/>
+  <!-- Straight lines (remaining 4 "circles") -->
+  <line x1="100" y1="30" x2="100" y2="170" stroke="#7c6ff7" stroke-width="1.2" opacity="0.6"/>
+  <line x1="100" y1="30" x2="40" y2="150" stroke="#f77c6f" stroke-width="1.2" opacity="0.6"/>
+  <line x1="100" y1="30" x2="160" y2="150" stroke="#f77c6f" stroke-width="1.2" opacity="0.6"/>
+  <line x1="40" y1="150" x2="160" y2="150" stroke="#7c6ff7" stroke-width="1.2" opacity="0.6"/>
+  <!-- 7 points -->
+  <circle cx="100" cy="30" r="5" fill="#e8e6f0" filter="url(#glow)"/>
+  <circle cx="100" cy="100" r="5" fill="#e8e6f0" filter="url(#glow)"/>
+  <circle cx="40" cy="150" r="5" fill="#e8e6f0" filter="url(#glow)"/>
+  <circle cx="160" cy="150" r="5" fill="#e8e6f0" filter="url(#glow)"/>
+  <circle cx="65" cy="60" r="5" fill="#7c6ff7" filter="url(#glow)"/>
+  <circle cx="135" cy="60" r="5" fill="#7c6ff7" filter="url(#glow)"/>
+  <circle cx="100" cy="170" r="5" fill="#7c6ff7" filter="url(#glow)"/>
+</svg>
