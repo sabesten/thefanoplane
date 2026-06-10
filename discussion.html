@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussion — Fano平面与物理</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chapter.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],tags:'ams'},svg:{fontCache:'global'}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="/" class="nav-back">← <span data-zh="返回" data-en="Back"></span></a>
+      <span class="nav-title" data-zh="讨论" data-en="Discussion"></span>
+    </div>
+    <div class="nav-links">
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中英</button>
+    </div>
+  </nav>
+
+  <main class="chapter-main">
+    <header class="chapter-header">
+      <span class="chapter-part"><span data-zh="交流" data-en="Exchange"></span></span>
+      <h1 class="chapter-book-title"><span data-zh="讨论与留言" data-en="Discussion"></span></h1>
+      <p class="chapter-book-desc"><span data-zh="欢迎提问、讨论或留下评论。支持 LaTeX 数学公式和 Markdown 格式。" data-en="Questions, discussions, and comments are welcome. LaTeX math and Markdown supported."></span></p>
+    </header>
+
+    <section class="chapter-content">
+      <div class="bilingual">
+        <div class="lang-block" data-lang="en">
+          <p>This space is for open discussion about the monograph <em>The Fano Plane in Physics</em>. Feel free to:</p>
+          <ul>
+            <li>Ask questions about specific theorems or proofs</li>
+            <li>Point out errors or suggest corrections</li>
+            <li>Share related research or connections</li>
+            <li>Discuss the philosophical implications</li>
+          </ul>
+          <p>The author (or an AI research assistant) may respond to comments.</p>
+        </div>
+        <div class="lang-block" data-lang="zh">
+          <p>此空间用于关于专著《Fano平面与物理》的开放讨论。欢迎：</p>
+          <ul>
+            <li>对特定定理或证明提问</li>
+            <li>指出错误或建议修正</li>
+            <li>分享相关研究或联系</li>
+            <li>讨论哲学含义</li>
+          </ul>
+          <p>作者（或AI研究助手）可能会回复评论。</p>
+        </div>
+      </div>
+
+      <!-- Giscus will be embedded here after GitHub repo setup -->
+      <div id="giscus-container" style="margin-top: 40px;">
+        <div class="giscus-placeholder" style="
+          background: var(--bg-card);
+          border: 1px dashed var(--accent-dim);
+          border-radius: var(--radius);
+          padding: 40px;
+          text-align: center;
+        ">
+          <p style="color: var(--text-dim); font-size: 15px;">
+            <span data-zh="📝 留言板即将上线——需要先创建 GitHub 仓库并配置 Giscus。" data-en="📝 Discussion board coming soon — requires GitHub repo setup and Giscus configuration."></span>
+          </p>
+          <p style="color: var(--accent-dim); font-size: 13px; margin-top: 12px;">
+            <span data-zh="支持 LaTeX 公式、Markdown 格式，作者可回复" data-en="LaTeX math, Markdown supported, author can respond"></span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 <em>The Fano Plane in Physics</em>. All rights reserved.</p>
+  </footer>
+  <script src="/js/fano.js"></script>
+  <script src="/js/lang.js"></script>
+</body>
+</html>
